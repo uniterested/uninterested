@@ -24,7 +24,7 @@ class _DashBoardState extends State<DashBoard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Unintrested'),
+        title: const Text('sdfsa'),
       ),
       body: Center(
         child: Column(
