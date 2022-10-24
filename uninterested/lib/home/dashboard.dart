@@ -1,238 +1,100 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
-import 'package:image_picker/image_picker.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:uninterested/home/stor.dart';
 
-class DashBoard extends StatefulWidget {
-  const DashBoard({super.key});
-
-  @override
-  State<DashBoard> createState() => _DashBoardState();
-}
-
-class _DashBoardState extends State<DashBoard> {
-  File? _image;
-  Future getImage() async {
-    final image = await ImagePicker().pickImage(source: ImageSource.camera);
-    if (image == null) return;
-    final imageTemporary = File(image.path);
-    setState(() {
-      _image = imageTemporary;
-    });
-  }
+class DashBoardScreen extends StatelessWidget {
+  const DashBoardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: Center(
-      //   child: Column(
-      //     children: [
-      // Image.network(
-      //     'https://media.gettyimages.com/photos/modern-laptop-with-empty-screen-on-white-background-mockup-design-picture-id1182241805'),
-      //       SizedBox(),
-      //       TextButton(
-      //         onPressed: () {},
-      //         child: Text('Gallery'),
-      //       ),
-      //       TextButton(
-      //           onPressed: () {
-      //             getImage();
-      //           },
-      //           child: const Text('OpenCam'))
-      //     ],
-      //   ),
-      // ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: SafeArea(
-          child: Column(children: [
-            Stack(
+            child: Column(children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 32.0, left: 16, right: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  children: [
-                    Container(
-                      height: 350,
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(227, 208, 224, 187),
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(120),
-                              bottomRight: Radius.circular(120))),
-                    ),
-                  ],
+                Image.asset(
+                  'images/menu.png',
+                  height: 30,
+                  width: 30,
                 ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 18.0, left: 16),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 42,
-                            child: Icon(Icons.person),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(top: 30.0, left: 16),
-                                child: Text(
-                                  "Hi... Aslam",
-                                  style: TextStyle(
-                                      fontSize: 28,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 10.0, right: 10, top: 17, bottom: 12),
-                      child: Stack(
-                        children: [
-                          Container(
-                            height: 180,
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
-                              color: Colors.amber,
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            child: Center(
-                                child: Text(
-                                    'Cardea Health Care Solutions')), //book advertaisment
-                          ),
-                          Positioned(
-                            top: 9,
-                            left: 1,
-                            child: Container(
-                              height: 160,
-                              width: 8,
-                              decoration: BoxDecoration(
-                                color: Colors.green,
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Card(
-                            elevation: 0,
-                            child: Container(
-                              height: 190,
-                              width: 170,
-                              decoration: BoxDecoration(
-                                color: Colors.black12,
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              child: IconButton(
-                                icon: Icon(
-                                  Icons.camera,
-                                  size: 120,
-                                ),
-                                onPressed: () {
-                                  getImage();
-                                },
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(1.0),
-                          child: Card(
-                            elevation: 0,
-                            child: Container(
-                              height: 190,
-                              width: 170,
-                              decoration: BoxDecoration(
-                                color: Colors.black12,
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              child: Image.network(
-                                'https://media.gettyimages.com/photos/modern-laptop-with-empty-screen-on-white-background-mockup-design-picture-id1182241805',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Card(
-                            elevation: 0,
-                            child: Container(
-                              height: 190,
-                              width: 170,
-                              decoration: BoxDecoration(
-                                color: Colors.black12,
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(1.0),
-                          child: Card(
-                            elevation: 0,
-                            child: Container(
-                              height: 190,
-                              width: 170,
-                              decoration: BoxDecoration(
-                                color: Colors.black12,
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Card(
-                            elevation: 0,
-                            child: Container(
-                              height: 190,
-                              width: 170,
-                              decoration: BoxDecoration(
-                                color: Colors.black12,
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(1.0),
-                          child: Card(
-                            elevation: 0,
-                            child: Container(
-                              height: 190,
-                              width: 170,
-                              decoration: BoxDecoration(
-                                color: Colors.black12,
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                CircleAvatar(
+                  child: Text('AS'),
                 )
               ],
             ),
-          ]),
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Container(
+              height: 160,
+              color: Colors.black12,
+            ),
+          ),
+          Container(
+            height: 1000,
+            child: GridView.builder(
+              itemCount: Stors1.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: .0,
+                  mainAxisSpacing: 7.0),
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  width: 120,
+                  child: Card(
+                    elevation: 2,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 8.0, bottom: 8, right: 16, left: 16),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Center(
+                              child: Container(
+                                  height: 110,
+                                  width: 110,
+                                  child: Image.asset(
+                                    Stors1[index]["image"],
+                                    fit: BoxFit.cover,
+                                  )),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(Stors1[index]['name']),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(Stors1[index]['rs']),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 8.0),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons.star,
+                                        size: 16,
+                                      ),
+                                      Text(Stors1[index]['rate'])
+                                    ],
+                                  ),
+                                )
+                              ],
+                            )
+                          ]),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ])),
       ),
     );
   }
