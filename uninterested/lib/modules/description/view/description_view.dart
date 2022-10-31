@@ -8,7 +8,10 @@ class DescripitonView extends GetView<DescriptionController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+          leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.arrow_back_ios_new_rounded))),
       body: SingleChildScrollView(
         child: Column(
           children: const [],
