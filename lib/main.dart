@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uninterested/home/dashboard.dart';
 import 'package:uninterested/modules/description/view/description_view.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const DashBoardScreen(),
+      home: DescripitonView(),
     );
   }
 }
