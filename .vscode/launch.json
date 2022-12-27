@@ -6,20 +6,17 @@
     "configurations": [
         {
             "name": "uninterested",
-            "cwd": "uninterested",
             "request": "launch",
             "type": "dart"
         },
         {
             "name": "uninterested (profile mode)",
-            "cwd": "uninterested",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
             "name": "uninterested (release mode)",
-            "cwd": "uninterested",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
