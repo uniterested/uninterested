@@ -27,6 +27,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Ldrawer(),
       backgroundColor: Colors.blue.shade100,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -34,17 +35,6 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           child: Column(children: [
             Stack(
               children: [
-                // Image.asset(
-                //   'assets/09.jpg',
-                //   fit: BoxFit.fill,
-                //   height: MediaQuery.of(context).size.height,
-                // ),
-                // CustomPaint(
-                //   child: Container(
-                //     height: 300.0,
-                //   ),
-                //   painter: CurvePainter(),
-                // ),
                 Column(
                   children: [
                     Padding(
@@ -53,17 +43,24 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(9.0),
-                              child: Image.asset(
-                                AppLeadingIcons.menu,
+                          Builder(
+                            builder: (context) => InkWell(
+                              child: Container(
+                                height: 40,
+                                width: 40,
+                                decoration: BoxDecoration(
+                                    color: Colors.blue,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(9.0),
+                                  child: Image.asset(
+                                    AppLeadingIcons.menu,
+                                  ),
+                                ),
                               ),
+                              onTap: () {
+                                Scaffold.of(context).openDrawer();
+                              },
                             ),
                           ),
                           Row(
@@ -147,14 +144,19 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                         CarouselSlider.builder(
                           itemCount: Stors1.length,
                           itemBuilder: (context, index, realIndex) {
-                            return Container(
-                                width: MediaQuery.of(context).size.width,
-                                child: Image.asset(
-                                  Stors1[index]["image"],
-                                  fit: BoxFit.fill,
-                                ));
+                            return Padding(
+                              padding: const EdgeInsets.all(16),
+                              child: Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  child: Image.asset(
+                                    Stors1[index]["image"],
+                                    fit: BoxFit.fill,
+                                  )),
+                            );
                           },
                           options: CarouselOptions(
+                              disableCenter: false,
+                              viewportFraction: 1,
                               height: 180,
                               autoPlay: true,
                               autoPlayInterval: Duration(seconds: 5),
@@ -169,8 +171,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                         buildIndicator()
                       ]),
                     ),
-                    Container(
-                        child: GridView.builder(
+                    GridView.builder(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       itemCount: Stors1.length,
@@ -311,7 +312,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                           )),
                         );
                       },
-                    ))
+                    )
                   ],
                 ),
               ],
@@ -439,5 +440,129 @@ class CurvePainter extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
     return oldDelegate != this;
+  }
+}
+
+class Ldrawer extends StatelessWidget {
+  const Ldrawer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Drawer(
+          backgroundColor: Colors.deepOrangeAccent[100],
+          child: SafeArea(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, right: 240),
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    size: 30,
+                  ),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Expanded(
+                  child: ListView(
+                    children: [
+                      SizedBox(
+                        height: 50,
+                        child: ListTile(
+                          leading: Icon(Icons.shopping_bag_outlined),
+                          iconColor: Colors.black,
+                          title: Text(
+                            "Your Orders",
+                            style: TextStyle(fontSize: 12),
+                          ),
+                          onTap: () {},
+                          minLeadingWidth: 1,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 50,
+                        child: ListTile(
+                          leading: Icon(Icons.person_outlined),
+                          iconColor: Colors.black,
+                          title: Text(
+                            "My Profile",
+                            style: TextStyle(fontSize: 12),
+                          ),
+                          minLeadingWidth: 1,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 50,
+                        child: ListTile(
+                          leading: Icon(Icons.keyboard),
+                          iconColor: Colors.black,
+                          title: Text(
+                            "Payment History",
+                            style: TextStyle(fontSize: 12),
+                          ),
+                          minLeadingWidth: 1,
+                        ),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.headset_mic_rounded),
+                        iconColor: Colors.black,
+                        title: Text(
+                          "About Us",
+                          style: TextStyle(fontSize: 12),
+                        ),
+                        minLeadingWidth: 1,
+                      )
+                    ],
+                  ),
+                ),
+                Icon(
+                  Icons.power_settings_new,
+                  color: Colors.white,
+                  size: 20,
+                  shadows: [
+                    Shadow(
+                        color: Colors.black26,
+                        offset: Offset(1, 2),
+                        blurRadius: 5),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Log Out",
+                  style: TextStyle(color: Colors.white, fontSize: 16, shadows: [
+                    Shadow(
+                        color: Colors.black26,
+                        offset: Offset(-1, 3),
+                        blurRadius: 5),
+                  ]),
+                ),
+                SizedBox(
+                  height: 60,
+                )
+              ],
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 255, top: 65),
+          child: CircleAvatar(
+            backgroundColor: Colors.deepOrangeAccent[100],
+            radius: 40,
+            child: Material(
+              borderRadius: BorderRadius.circular(30),
+              elevation: 4,
+              child: CircleAvatar(
+                radius: 30,
+                backgroundImage: AssetImage("assets/1.jpg"),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
