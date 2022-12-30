@@ -38,7 +38,7 @@ class CommonTextFormField extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 8.0),
           child: Padding(
-            padding: EdgeInsets.only(bottom: 5.0, right: 24, left: 24),
+            padding: EdgeInsets.only(bottom: 20.0, right: 24, left: 24),
             child: TextFormField(
               autovalidateMode: AutovalidateMode.onUserInteraction,
               keyboardType: textInputType,
