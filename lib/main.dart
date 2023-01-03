@@ -3,6 +3,8 @@ import 'package:uninterested/home/dashboard.dart';
 import 'package:uninterested/home/product.dart';
 import 'package:uninterested/modules/description/view/description_view.dart';
 
+import 'home/profile_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
