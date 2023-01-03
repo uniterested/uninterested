@@ -50,7 +50,7 @@ class _ProductscrnState extends State<Productscrn> {
             ),
             Padding(
               padding:
-                  const EdgeInsets.only(bottom: 120.0, left: 16, right: 16),
+                  const EdgeInsets.only(bottom: 180.0, left: 16, right: 16),
               child: Align(
                 alignment: Alignment.center,
                 child: Row(
@@ -79,17 +79,17 @@ class _ProductscrnState extends State<Productscrn> {
                     borderRadius: BorderRadius.circular(37),
                     color: AppColorPallet.orange.withOpacity(.6),
                   ),
-                  height: 378,
+                  height: 370,
                   child: Column(
                     children: [
-                      const Padding(
+                       Padding(
                         padding: EdgeInsets.only(
                             top: 26, left: 18, right: 10, bottom: 15),
                         child: SizedBox(
                           width: 328,
                           child: Text(
                             "LETHER HAND MAID POASAS AJJGGKGG BFDKDFHDFNFND",
-                            style: TextStyle(fontSize: 17),
+                            style: AppTextStyle.sfpro(fontSize: 17,fontWeight: FontWeight.w400),
                           ),
                         ),
                       ),
@@ -104,12 +104,13 @@ class _ProductscrnState extends State<Productscrn> {
                               height: 17,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
-                                  color: Colors.deepOrange.withOpacity(.45)),
+                                  color: AppColorPallet.orange2.withOpacity(.45)
+                                  ),
                               child: Align(
                                   alignment: Alignment.center,
                                   child: Text(
                                     "In Stock",
-                                    style: TextStyle(
+                                    style: AppTextStyle.sfpro(
                                         color: Colors.black54, fontSize: 13),
                                   )),
                             ),
@@ -119,8 +120,9 @@ class _ProductscrnState extends State<Productscrn> {
                                   width: 72,
                                   child: Text(
                                     "506 Review",
-                                    style: TextStyle(
+                                    style: AppTextStyle.sfpro(
                                       fontSize: 13,
+                                      fontWeight: FontWeight.w400
                                     ),
                                   ),
                                 ),
@@ -149,15 +151,16 @@ class _ProductscrnState extends State<Productscrn> {
                                 children: [
                                   Text(
                                     "Sceant",
-                                    style: TextStyle(
+                                    style: AppTextStyle.sfpro(
                                         fontSize: 13,
                                         fontWeight: FontWeight.w700),
                                   ),
                                   SizedBox(
                                     width: 72,
                                     child: Text("Scanted",
-                                        style: TextStyle(
+                                        style: AppTextStyle.sfpro(
                                           fontSize: 13,
+                                          fontWeight: FontWeight.w400
                                         )),
                                   )
                                 ],
@@ -172,7 +175,7 @@ class _ProductscrnState extends State<Productscrn> {
                                 children: [
                                   Text(
                                     "Health Facts",
-                                    style: TextStyle(
+                                    style: AppTextStyle.sfpro(
                                         fontSize: 13,
                                         fontWeight: FontWeight.w700),
                                   ),
@@ -180,8 +183,9 @@ class _ProductscrnState extends State<Productscrn> {
                                     width: 72,
                                     child: Text(
                                       "vitamin b5, hyaluronic acid, peptides,",
-                                      style: TextStyle(
+                                      style: AppTextStyle.sfpro(
                                         fontSize: 13,
+                                        fontWeight: FontWeight.w400
                                       ),
                                     ),
                                   ),
@@ -197,7 +201,7 @@ class _ProductscrnState extends State<Productscrn> {
                                 children: [
                                   Text(
                                     "Product From",
-                                    style: TextStyle(
+                                    style: AppTextStyle.sfpro(
                                         fontSize: 13,
                                         fontWeight: FontWeight.w700),
                                   ),
@@ -205,7 +209,7 @@ class _ProductscrnState extends State<Productscrn> {
                                     width: 72,
                                     child: Text(
                                       "Cream",
-                                      style: TextStyle(fontSize: 13),
+                                      style: AppTextStyle.sfpro(fontSize: 13,fontWeight: FontWeight.w400),
                                     ),
                                   ),
                                 ],
@@ -229,9 +233,7 @@ class _ProductscrnState extends State<Productscrn> {
                                         onPressed: () {},
                                         child: Text(
                                           "ADD TO CART",
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w700),
+                                          
                                         )),
                                   ),
                                 ),

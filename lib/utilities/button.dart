@@ -39,7 +39,7 @@ class AppTextFittedElevatedButton extends StatelessWidget {
           elevation: elevation,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
-              8,
+              15,
             ),
           ),
           textStyle: textStyle ??
