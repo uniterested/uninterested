@@ -38,6 +38,11 @@ class AppColorPallet {
   static const Color success = Color(0xFF40c057);
   static const Color success_light = Color(0xFFebfbee);
   static const Color failure = Color(0xFFf03e3e);
+  // 
+  static const Color hint=Color(0xFFB9B8B8);
+  static const Color title=Color(0xFF595555);
+
 //
   static const Color pink = Color(0xFFF09FBF);
+  static const Color disable_btn=Color(0xFFC6ADB7);
 }

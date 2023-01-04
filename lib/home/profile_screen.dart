@@ -2,9 +2,11 @@ import 'dart:io';
 
 import 'package:adaptive_action_sheet/adaptive_action_sheet.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:uninterested/utilities/AppColor.dart';
 import 'package:uninterested/utilities/AppColorStyle.dart';
+import 'package:uninterested/utilities/AppIcons.dart';
 import 'package:uninterested/utilities/app_back_button.dart';
 import 'package:uninterested/utilities/app_leading_app_bar.dart';
 import 'package:uninterested/utilities/app_text_fitted_elevated_button.dart';
@@ -31,6 +33,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppLeadingAppBar(
         background: AppColorPallet.pink,
         title: "Profile",
+      
         leading: AppBackButton(),
       ),
       body: Stack(
@@ -55,34 +58,46 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.max,
                           children: [
+                            // Padding(
+                            //   padding: EdgeInsets.only(
+                            //       top: 99.0, left: 26, bottom: 52),
+                            //   child: GestureDetector(
+                            //     child: Text(
+                            //       "Let's create your profile",
+                            //       style: AppTextStyle.sfpro(
+                            //           fontWeight: FontWeight.w600),
+                            //     ),
+                            //     onTap: (() {}),
+                            //   ),
+                            // ),
                             Padding(
-                              padding: EdgeInsets.only(
-                                  top: 99.0, left: 26, bottom: 52),
-                              child: GestureDetector(
-                                child: Text(
-                                  "Let's create your profile",
-                                  style: AppTextStyle.sfpro(
-                                      fontWeight: FontWeight.w600),
-                                ),
-                                onTap: (() {}),
+                              padding: const EdgeInsets.only(top: 115),
+                              child: CommonTextFormField(
+                                textInputType: TextInputType.text,
+                                controller: _userNameController,
+                                title: "Name *",
+                                hintText: "Enter Name",
+                                // validator: MultiValidator([
+                                //   RequiredValidator(
+                                //       errorText: "Please enter your name"),
+                                // ]),
                               ),
                             ),
+
                             CommonTextFormField(
-                              textInputType: TextInputType.text,
-                              controller: _userNameController,
-                              title: "Your Name",
-                              hintText: "Enter name",
-                              // validator: MultiValidator([
-                              //   RequiredValidator(
-                              //       errorText: "Please enter your name"),
-                              // ]),
+                              textInputType: TextInputType.emailAddress,
+                              controller: _emailIdController,
+                              title: "Email id",
+                              hintText: "Enter Email Id",
+                              // validator: MultiValidator(
+                              // [EmailValidator(errorText: 'Enter valid email')]),
                             ),
 
                             CommonTextFormField(
                               textInputType: TextInputType.number,
                               controller: _mobileNumberController,
-                              title: "Mobile Number",
-                              hintText: "Enter mobile number",
+                              title: "Phone Number *",
+                              hintText: "Enter Phone Number",
                               // validator: MultiValidator([
                               //   LengthRangeValidator(
                               //       min: 10,
@@ -99,21 +114,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             CommonTextFormField(
                               textInputType: TextInputType.number,
                               controller: _alternateMobNoController,
-                              title: "Alternate Mobile Number",
-                              hintText: "Enter alternate mobile number",
+                              title: "Alternate Number",
+                              hintText: "Enter Alternate Number",
                               inputFormatters: [
                                 // LengthLimitingTextInputFormatter(10),
                                 // FilteringTextInputFormatter.digitsOnly,
                               ],
                             ),
-                            CommonTextFormField(
-                              textInputType: TextInputType.emailAddress,
-                              controller: _emailIdController,
-                              title: "Email Id",
-                              hintText: "Enter Email Id",
-                              // validator: MultiValidator(
-                              // [EmailValidator(errorText: 'Enter valid email')]),
-                            ),
+                            
 
                             //dropdownbusiness category
 
@@ -174,25 +182,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ],
                   ),
-                  Positioned(
-                      left: 20,
-                      top: 20,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 25),
+                    child: Align(alignment: Alignment.topCenter,
                       child: picture == null
-                          ? CircleAvatar(
-                              radius: 60,
-                              child: Icon(Icons.person),
-                            )
+                          ? Container(
+                            decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            boxShadow: [BoxShadow(blurRadius: 15, color: Colors.black12,spreadRadius: 3)],
+                            ),
+                            child: CircleAvatar(
+                                radius: 75,
+                                child: Icon(Icons.person),
+                              ),
+                          )
                           : CircleAvatar(
-                              radius: 60,
+                              radius: 75,
                               backgroundImage: FileImage(
                                 File(picture!.path),
                               ),
-                            )),
+                            ),
+                    ),
+                  ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 110.0, top: 82),
-                    child: CircleAvatar(
-                      radius: 19,
-                      // backgroundColor: AppColorPallet.zop_green_natural_light,
+                    padding: const EdgeInsets.only(left: 228.0, top: 130),
+                  //   child: 
+                  //   CircleAvatar(
+                  //     radius: 19,
+                  //  backgroundColor: AppColorPallet.zop_green_natural_light,
                       child: IconButton(
                         onPressed: () {
                           showAdaptiveActionSheet(
@@ -247,9 +264,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             )),
                           );
                         },
-                        icon: Icon(Icons.edit),
-                        // icon: SvgPicture.asset(
-                        //   AppIcons.pencil_simple,
+                        // icon: Icon(Icons.edit),
+                         icon: SvgPicture.asset(
+                           AppLeadingIcons.edit,
                         // ),
                       ),
                     ),
@@ -262,8 +279,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.only(bottom: 24.0),
             child: Align(
               alignment: Alignment.bottomCenter,
-              child: AppTextFittedElevatedButton(
-                  onPressed: () {}, child: Text('Next')),
+              child: SizedBox(width: 178,
+              height: 48,
+                child: AppTextFittedElevatedButton(
+                    onPressed: () {}, child: Text('Next')),
+              ),
             ),
           )
         ],

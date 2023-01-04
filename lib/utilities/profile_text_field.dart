@@ -26,57 +26,56 @@ class CommonTextFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(top: 3.0, left: 24),
+          padding: EdgeInsets.only( left: 16),
           child: Text(
             title,
             style: AppTextStyle.sfpro(
                 fontSize: 14,
-                fontWeight: FontWeight.w600,
-                color: AppColorPallet.profileText),
+                fontWeight: FontWeight.w500,
+                color: AppColorPallet.title),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 8.0),
-          child: Padding(
-            padding: EdgeInsets.only(bottom: 20.0, right: 24, left: 24),
-            child: TextFormField(
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              keyboardType: textInputType,
-              controller: controller,
-              validator: validator,
-              inputFormatters: inputFormatters,
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(
-                      color: AppColorPallet.zop_green_natural_light,
-                    ),
+          padding: EdgeInsets.only(top:10,bottom: 20.0, right: 16, left: 16),
+          child: TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            keyboardType: textInputType,
+            controller: controller,
+            validator: validator,
+            inputFormatters: inputFormatters,
+            decoration: InputDecoration(
+              
+                border: OutlineInputBorder(),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(
+                    color: AppColorPallet.zop_green_natural_light,
                   ),
-                  errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(
-                      color: AppColorPallet.zop_Red,
-                    ),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(
+                    color: AppColorPallet.zop_Red,
                   ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(
-                      color: AppColorPallet.zop_green_natural_light,
-                    ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(
+                    color: AppColorPallet.zop_green_natural_light,
                   ),
-                  disabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(
-                      color: AppColorPallet.zop_green_natural_light,
-                    ),
+                ),
+                disabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(
+                    color: AppColorPallet.zop_green_natural_light,
                   ),
-                  hintText: hintText,
-                  hintStyle: AppTextStyle.sfpro(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w400,
-                      color: AppColorPallet.zop_orders_count)),
-            ),
+                ),
+                contentPadding: EdgeInsets.only(left: 8),
+                hintText: hintText,
+                hintStyle: AppTextStyle.sfpro(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: AppColorPallet.hint)),
           ),
         ),
       ],

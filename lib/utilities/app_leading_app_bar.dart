@@ -19,8 +19,9 @@ class AppLeadingAppBar extends AppBar {
           title: Text(
             title ?? "",
             style: AppTextStyle.sfpro(
-              fontSize: 20,
-              fontWeight: FontWeight.w400,
+              fontSize: 24,
+              fontWeight: FontWeight.w500,
+              
             ),
           ),
           backgroundColor: background,

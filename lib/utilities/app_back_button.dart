@@ -10,7 +10,7 @@ class AppBackButton extends StatelessWidget {
     return Center(
       child: GestureDetector(
         child: SvgPicture.asset(
-          AppLeadingIcons.back_button,
+          AppLeadingIcons.back,
           color: AppColorPallet.black,
           height: 23,
           width: 23,

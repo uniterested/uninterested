@@ -46,6 +46,7 @@ class AppTextFittedElevatedButton extends StatelessWidget {
               AppTextStyle.sfpro(
                 color: AppColorPallet.white,
                 fontWeight: FontWeight.w700,
+                fontSize: 15
               ),
           side: BorderSide(
             color: backgroundColor,

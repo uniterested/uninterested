@@ -15,7 +15,7 @@ class AppTextFittedElevatedButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     required this.child,
-    this.backgroundColor = AppColorPallet.pink,
+    this.backgroundColor = AppColorPallet.disable_btn,
     this.foregroundColor = AppColorPallet.zop_green_elevating,
     this.expandAcrossWidth = false,
     this.elevation = 0,
@@ -36,13 +36,14 @@ class AppTextFittedElevatedButton extends StatelessWidget {
           elevation: elevation,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
-              8,
+              17,
             ),
           ),
           textStyle: textStyle ??
               AppTextStyle.sfpro(
                 color: AppColorPallet.white,
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w600,
+                fontSize: 16
               ),
           side: BorderSide(
             color: backgroundColor,

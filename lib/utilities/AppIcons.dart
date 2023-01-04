@@ -8,4 +8,6 @@ class AppLeadingIcons {
   static const String back=_iconPath+'back.svg';
   static const String backbtn=_iconPath+'backbtn.svg';
   static const String forwardbtn=_iconPath+'forbtn.svg';
+  static const String edit=_iconPath+'edit.svg';
+  
 }

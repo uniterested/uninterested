@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'SFPro',
         // primarySwatch: Colors.blue,
       ),
-      home: const Productscrn(),
+      home: const ProfileScreen(),
     );
   }
 }
