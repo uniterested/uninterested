@@ -43,7 +43,8 @@ dependencies:
   path_provider: ^2.0.11
   flutter_svg: ^1.1.5
   smooth_page_indicator: ^1.0.0+2
-  multi_validator: ^1.0.1
+  intl: ^0.18.0
+  
   get: ^4.6.5
   google_fonts: ^3.0.1
 
