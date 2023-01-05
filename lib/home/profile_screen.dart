@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:adaptive_action_sheet/adaptive_action_sheet.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:uninterested/utilities/AppColor.dart';
@@ -11,6 +12,8 @@ import 'package:uninterested/utilities/app_back_button.dart';
 import 'package:uninterested/utilities/app_leading_app_bar.dart';
 import 'package:uninterested/utilities/app_text_fitted_elevated_button.dart';
 import 'package:uninterested/utilities/profile_text_field.dart';
+
+import '../utilities/text_form_validation.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -77,10 +80,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 controller: _userNameController,
                                 title: "Name *",
                                 hintText: "Enter Name",
-                                // validator: MultiValidator([
-                                //   RequiredValidator(
-                                //       errorText: "Please enter your name"),
-                                // ]),
+                                validator: MultiValidator([
+                                  RequiredValidator(
+                                      errorText: "Please enter your name"),
+                                ]),
                               ),
                             ),
 
@@ -89,8 +92,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               controller: _emailIdController,
                               title: "Email id",
                               hintText: "Enter Email Id",
-                              // validator: MultiValidator(
-                              // [EmailValidator(errorText: 'Enter valid email')]),
+                              validator: MultiValidator(
+                              [EmailValidator(errorText: 'Enter valid email')]),
                             ),
 
                             CommonTextFormField(
@@ -98,18 +101,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               controller: _mobileNumberController,
                               title: "Phone Number *",
                               hintText: "Enter Phone Number",
-                              // validator: MultiValidator([
-                              //   LengthRangeValidator(
-                              //       min: 10,
-                              //       max: 13,
-                              //       errorText: "Please enter valid phone number"),
-                              //   RequiredValidator(
-                              //       errorText: "Please enter mobile name"),
-                              // ]),
-                              // inputFormatters: [
-                              //   LengthLimitingTextInputFormatter(13),
-                              //   FilteringTextInputFormatter.digitsOnly
-                              // ],
+                              validator: MultiValidator([
+                                LengthRangeValidator(
+                                    min: 10,
+                                    max: 13,
+                                    errorText: "Please enter valid phone number"),
+                                RequiredValidator(
+                                    errorText: "Please enter mobile name"),
+                              ]),
+                              inputFormatters: [
+                                LengthLimitingTextInputFormatter(13),
+                                FilteringTextInputFormatter.digitsOnly
+                              ],
                             ),
                             CommonTextFormField(
                               textInputType: TextInputType.number,
@@ -117,8 +120,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               title: "Alternate Number",
                               hintText: "Enter Alternate Number",
                               inputFormatters: [
-                                // LengthLimitingTextInputFormatter(10),
-                                // FilteringTextInputFormatter.digitsOnly,
+                                LengthLimitingTextInputFormatter(10),
+                                FilteringTextInputFormatter.digitsOnly,
                               ],
                             ),
                             

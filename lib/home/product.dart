@@ -285,16 +285,18 @@ class _ProductscrnState extends State<Productscrn> {
       padding: const EdgeInsets.only(top: 436),
       child: Align(
         alignment: Alignment.center,
-        child: AnimatedSmoothIndicator(
-          activeIndex: activeindex,
-          count: image.length,
-          effect: SlideEffect(
-            spacing: 0,
-            dotHeight: 4,
-            dotWidth: 84,
-            activeDotColor: Colors.deepOrange.withOpacity(.6),
-            dotColor: Colors.grey.withOpacity(.6),
-          ),
+        child: LinearProgressIndicator(
+          
+
+          // activeIndex: activeindex,
+          // count: image.length,
+          // effect:(
+          //   spacing: 0,
+          //   dotHeight: 4,
+          //   dotWidth: 84,
+          //   activeDotColor: Colors.deepOrange.withOpacity(.6),
+          //   dotColor: Colors.grey.withOpacity(.6),
+          // ),
         ),
       ),
     );
