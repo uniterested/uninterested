@@ -11,5 +11,9 @@ class AppLeadingIcons {
   static const String edit=_iconPath+'edit.svg';
   static const String arrow_down=_iconPath+'arrow_down.svg';
   static const String flag=_iconPath+'flag1.svg';
-  
+  static const String plan=_iconPath+'plan.svg';
+  static const String profile_icon=_iconPath+'profile_icon.svg';
+  static const String Payment=_iconPath+'payment.svg';
+  static const String about=_iconPath+'about_us.svg';
+  static const String log_out=_iconPath+'log_out.svg';
 }

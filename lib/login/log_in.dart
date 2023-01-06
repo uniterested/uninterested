@@ -66,21 +66,21 @@ class _LogInScreenState extends State<LogInScreen> {
 
                     
                     Padding(
-                      padding: const EdgeInsets.only(top: 10,left: 26,right: 26),
+                      padding: const EdgeInsets.only(top: 8,left: 25,right: 25),
                       child: Material(
-                        elevation: 2,
-                        
-                        borderRadius: BorderRadius.circular(8),
+                        elevation: 1,
+                        shadowColor: AppColorPallet.txt_fld_border,
+                        borderRadius: BorderRadius.circular(7),
                         child: Container(
                         
                           decoration: BoxDecoration(
-                         
-                            borderRadius: BorderRadius.circular(8),
+                         color: AppColorPallet.white,
+                            borderRadius: BorderRadius.circular(7),
                              border: Border.all(
-                              color: AppColorPallet.hintgrey
+                              color: AppColorPallet.txt_fld_border
                              )
                           ),
-                          height: 50,
+                          height: 46,
                           // width: 350,
                           // width: MediaQuery.of(context).size.width * 4 / 5,
                           child: Center(
@@ -116,15 +116,15 @@ class _LogInScreenState extends State<LogInScreen> {
                                       FilteringTextInputFormatter.digitsOnly,
                                       PhoneNumberFormatter()
                                     ],
-                                    style: const TextStyle(
+                                    style:  AppTextStyle.sfpro(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w700,
-                                      height: 1.5, //Add this
+                                      fontWeight: FontWeight.w400,
+                                      // height: 1.5, //Add this
                                     ),
                                     keyboardType: TextInputType.number,
                                     decoration: const InputDecoration(
 
-                                      contentPadding: EdgeInsets.only(left: 2,top: 2),
+                                      contentPadding: EdgeInsets.only(left: 2,top: 2,bottom: 2),
                                       
                                       hintText: "Enter Phone Number",
                                       border: InputBorder.none,
@@ -166,13 +166,16 @@ class _LogInScreenState extends State<LogInScreen> {
             ),
             Padding(
               padding: EdgeInsets.only(top: 16,left: 16,right: 16),
-              child: AppTextFittedElevatedButton(
+              child: SizedBox(height: 48,
+              
+                child: AppTextFittedElevatedButton(
             
-                expandAcrossWidth: true,
-                onPressed: () {
-                  
-                },
-                child: Text("Sent OTP",),
+                   expandAcrossWidth: true,
+                  onPressed: () {
+                    
+                  },
+                  child: Text("Sent OTP",),
+                ),
               ),
             ),
            

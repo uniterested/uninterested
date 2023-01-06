@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:uninterested/home/stor.dart';
 import 'package:uninterested/utilities/AppColor.dart';
@@ -450,17 +451,16 @@ class Ldrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Drawer(
-          backgroundColor: Colors.deepOrangeAccent[100],
-          child: SafeArea(
+        SizedBox(width: 327,
+          height: 846,
+          child: Drawer(
+            
+            backgroundColor:AppColorPallet.orange3,
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 20, right: 240),
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    size: 30,
-                  ),
+                  padding: const EdgeInsets.only(top: 60, right: 297),
+                  child: SvgPicture.asset(AppLeadingIcons.back)
                 ),
                 SizedBox(
                   height: 40,
@@ -471,11 +471,12 @@ class Ldrawer extends StatelessWidget {
                       SizedBox(
                         height: 50,
                         child: ListTile(
-                          leading: Icon(Icons.shopping_bag_outlined),
-                          iconColor: Colors.black,
+                          leading: SvgPicture.asset(AppLeadingIcons.plan),
+                          
                           title: Text(
                             "Your Orders",
-                            style: TextStyle(fontSize: 12),
+                            style: AppTextStyle.sfpro(fontSize: 14,
+                            fontWeight: FontWeight.w400),
                           ),
                           onTap: () {},
                           minLeadingWidth: 1,
@@ -484,11 +485,12 @@ class Ldrawer extends StatelessWidget {
                       SizedBox(
                         height: 50,
                         child: ListTile(
-                          leading: Icon(Icons.person_outlined),
-                          iconColor: Colors.black,
+                          leading: SvgPicture.asset(AppLeadingIcons.profile_icon),
+                         
                           title: Text(
                             "My Profile",
-                            style: TextStyle(fontSize: 12),
+                            style: AppTextStyle.sfpro(fontSize: 14,
+                            fontWeight: FontWeight.w400),
                           ),
                           minLeadingWidth: 1,
                         ),
@@ -496,44 +498,49 @@ class Ldrawer extends StatelessWidget {
                       SizedBox(
                         height: 50,
                         child: ListTile(
-                          leading: Icon(Icons.keyboard),
-                          iconColor: Colors.black,
+                          leading: SvgPicture.asset(AppLeadingIcons.Payment),
+                         
                           title: Text(
                             "Payment History",
-                            style: TextStyle(fontSize: 12),
+                            style: AppTextStyle.sfpro(fontSize: 14,
+                            fontWeight: FontWeight.w400),
                           ),
                           minLeadingWidth: 1,
                         ),
                       ),
                       ListTile(
-                        leading: Icon(Icons.headset_mic_rounded),
-                        iconColor: Colors.black,
+                        leading: SvgPicture.asset(AppLeadingIcons.about),
+                        
                         title: Text(
                           "About Us",
-                          style: TextStyle(fontSize: 12),
+                          style: AppTextStyle.sfpro(fontSize: 14,
+                            fontWeight: FontWeight.w400),
                         ),
                         minLeadingWidth: 1,
                       )
                     ],
                   ),
                 ),
-                Icon(
-                  Icons.power_settings_new,
-                  color: Colors.white,
-                  size: 20,
-                  shadows: [
-                    Shadow(
-                        color: Colors.black26,
-                        offset: Offset(1, 2),
-                        blurRadius: 5),
-                  ],
-                ),
+                // Icon(
+                //   Icons.power_settings_new,
+                //   color: Colors.white,
+                //   size: 20,
+                //   shadows: [
+                //     Shadow(
+                //         color: Colors.black26,
+                //         offset: Offset(1, 2),
+                //         blurRadius: 5),
+                //   ],
+                // ),
+                SvgPicture.asset(AppLeadingIcons.log_out),
                 SizedBox(
-                  height: 10,
+                  height: 8,
                 ),
                 Text(
                   "Log Out",
-                  style: TextStyle(color: Colors.white, fontSize: 16, shadows: [
+                  style: TextStyle(color: AppColorPallet.white,
+                   fontSize: 20,
+                   fontWeight: FontWeight.w400, shadows: [
                     Shadow(
                         color: Colors.black26,
                         offset: Offset(-1, 3),
@@ -541,22 +548,22 @@ class Ldrawer extends StatelessWidget {
                   ]),
                 ),
                 SizedBox(
-                  height: 60,
+                  height: 85,
                 )
               ],
             ),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 255, top: 65),
+          padding: const EdgeInsets.only(left: 265, top: 71),
           child: CircleAvatar(
-            backgroundColor: Colors.deepOrangeAccent[100],
-            radius: 40,
+            backgroundColor: AppColorPallet.orange3,
+            radius: 49,
             child: Material(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(38),
               elevation: 4,
               child: CircleAvatar(
-                radius: 30,
+                radius: 38,
                 backgroundImage: AssetImage("assets/1.jpg"),
               ),
             ),

@@ -50,4 +50,8 @@ class AppColorPallet {
   static const Color hintgrey=Color(0xFFBEBEBE);
   static const Color hint=Color(0xFFB9B8B8);
   static const Color pink2=Color(0xFFD95A8C);
+  static const Color blue2=Color(0xFF6792FF);
+  static const Color txt_fld_border=Color(0xFFEBEBEB);
+// 
+static const Color orange3=Color(0xFFFF8A65);
 }

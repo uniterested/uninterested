@@ -34,44 +34,50 @@ class _OtpScreenState extends State<OtpScreen> {
           title: "Phone Verification",
           
         ),
-        body: Stack(
-          children: [
-            SafeArea(
-              child: Column(
-                children: [
-                  
-                  Padding(
-                    padding: const EdgeInsets.only(top: 149),
-                    child: Text(
-                      "4 digit OTP has been sent to your no",
-                      style:
-                          AppTextStyle.sfpro(fontWeight: FontWeight.w400,
-                          fontSize: 17),
-                    ),
+        body: SafeArea(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: [
+                
+                Padding(
+                  padding: const EdgeInsets.only(top: 149),
+                  child: Text(
+                    "4 digit OTP has been sent to your no",
+                    style:
+                        AppTextStyle.sfpro(fontWeight: FontWeight.w400,
+                        fontSize: 17),
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 27),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 24),
+                      child: Material(
+                        elevation: 2,
+                        borderRadius: BorderRadius.circular(7),
                         child: Container(
                           decoration: BoxDecoration(
-                          border: Border.all(color: AppColorPallet.hint),
-                            borderRadius: BorderRadius.circular(9),
+                          border: Border.all(color: AppColorPallet.txt_fld_border),
+                            borderRadius: BorderRadius.circular(7),
+                             color: AppColorPallet.white
                             
                           ),
                           
-                          height: 50,
-                          width: 220,
+                          height: 46,
+                          width: 200,
                           
                           // width: MediaQuery.of(context).size.width * 4 / 5,
                           child: Center(
                             child: TextField(
+                              
                               // controller: _otpController,
                               autofocus: true,
-                              style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.w700,
+                              
+                              style: AppTextStyle.sfpro(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w600,
                               ),
                               inputFormatters: [
                                 LengthLimitingTextInputFormatter(10),
@@ -81,11 +87,14 @@ class _OtpScreenState extends State<OtpScreen> {
                               keyboardType: TextInputType.number,
                               textAlign: TextAlign.center,
                               decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(vertical: 2),
                                 hintText: "Enter OTP",
                                 hintStyle: AppTextStyle.sfpro(
                                   fontSize: 17,
                                   fontWeight: FontWeight.w600,
-                                  color: AppColorPallet.hint
+                                  color: AppColorPallet.hint,
+                      
+                                  
                                 ),
                               
                                 focusedBorder: OutlineInputBorder(
@@ -94,85 +103,89 @@ class _OtpScreenState extends State<OtpScreen> {
                                   ),
                                 ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(7),
                                   borderSide: const BorderSide(
                                       color: Colors.transparent),
-
+                                                
                                 ),
                               ),
                             ),
                           ),
                         ),
                       ),
-                      if (isOtpFormatError)
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            'Entered wrong format',
-                            style: AppTextStyle.sfpro(
-                              color: AppColorPallet.zop_Red,
-                            ),
+                    ),
+                    if (isOtpFormatError)
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Entered wrong format',
+                          style: AppTextStyle.sfpro(
+                            color: AppColorPallet.zop_Red,
                           ),
                         ),
+                      ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 40,right: 40, top: 48),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Didn’t recive the OTP ?",
+                        style: AppTextStyle.sfpro(
+                          fontSize: 17,
+                            fontWeight: FontWeight.w400),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          
+                        },
+                        child: Text(
+                          'Resend OTP',
+                          style: AppTextStyle.sfpro(
+                              fontWeight: FontWeight.w500, fontSize: 17),
+                        ),
+                      )
                     ],
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 40,right: 40, top: 40),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Didn’t recive the OTP ?",
+                ),
+                  
+                 Padding(
+                  padding: EdgeInsets.only(left: 40,right: 33,top: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Automatically detect the OTP ?",
+                        style: AppTextStyle.sfpro(
+                          fontSize: 17,
+                            fontWeight: FontWeight.w400),
+                      ),
+                      
+                      TextButton(
+                        onPressed: () {
+                          
+                        },
+                        child: Text(
+                          'Yes',
                           style: AppTextStyle.sfpro(
-                            fontSize: 17,
-                              fontWeight: FontWeight.w400),
+                              fontWeight: FontWeight.w500, fontSize: 17,
+                              color: AppColorPallet.pink2),
                         ),
-                        TextButton(
-                          onPressed: () {
-                            
-                          },
-                          child: Text(
-                            'Resend OTP',
-                            style: AppTextStyle.sfpro(
-                                fontWeight: FontWeight.w500, fontSize: 17),
-                          ),
-                        )
-                      ],
-                    ),
+                      )
+                    ],
                   ),
-
-                   Padding(
-                    padding: EdgeInsets.only(left: 40,right: 30,top: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Automatically detect the OTP ?",
-                          style: AppTextStyle.sfpro(
-                            fontSize: 17,
-                              fontWeight: FontWeight.w400),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            
-                          },
-                          child: Text(
-                            'Yes',
-                            style: AppTextStyle.sfpro(
-                                fontWeight: FontWeight.w500, fontSize: 17,
-                                color: AppColorPallet.pink2),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-
-                  Flexible(
-                    child: SizedBox(
-                      height: 649,
-                    ),
-                  ),
-                  AppTextFittedElevatedButton(
+                ),
+                  
+                SizedBox(
+                  height: 193,
+                ),
+                SizedBox(
+                  width: 178,
+                  height: 48,
+                  child: AppTextFittedElevatedButton(
+                    elevation: 3,
                     onPressed: () {
                     
                     },
@@ -185,60 +198,60 @@ class _OtpScreenState extends State<OtpScreen> {
                      ),
                     ),
                   ),
-                  
-                  Padding(
-                    padding: const EdgeInsets.only(
+                ),
+                
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top:56,
+                    left: 22.0,
+                    right: 22,
+                    bottom: 63
+                  ),
+                  child: GestureDetector(
+                    onTap: ()  {
                       
-                      left: 22.0,
-                      right: 22,
-                      bottom: 63
-                    ),
-                    child: GestureDetector(
-                      onTap: ()  {
-                        
-                      },
-                      child: RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                                text: "By continuing you acknowledge that you have read and understood and agree to our  ",
-                                style: AppTextStyle.sfpro(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color:AppColorPallet.grey2
-                                )),
-                            TextSpan(
-                              text: "Terms of service ",
+                    },
+                    child: RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                              text: "By continuing you acknowledge that you have read and understood and agree to our  ",
                               style: AppTextStyle.sfpro(
                                 fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColorPallet.blue2),
-                            ),
-                            TextSpan(
-                                text: "and ",
-                                style: AppTextStyle.sfpro(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColorPallet.grey2
-                                )),
-                            TextSpan(
-                              text: "Privacy Policy",
+                                fontWeight: FontWeight.w500,
+                                color:AppColorPallet.grey2
+                              )),
+                          TextSpan(
+                            text: "Terms of service ",
+                            style: AppTextStyle.sfpro(
+                              fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: AppColorPallet.blue2),
+                          ),
+                          TextSpan(
+                              text: "and ",
                               style: AppTextStyle.sfpro(
                                 fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColorPallet.blue2),
-                            ),
-                          ],
-                        ),
+                                fontWeight: FontWeight.w500,
+                                color: AppColorPallet.grey2
+                              )),
+                          TextSpan(
+                            text: "Privacy Policy",
+                            style: AppTextStyle.sfpro(
+                              fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: AppColorPallet.blue2),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                 
-                ],
-              ),
+                ),
+               
+              ],
             ),
-          ],
+          ),
         ),
       
     );
