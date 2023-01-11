@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:uninterested/utilities/AppColor.dart';
+import 'package:uninterested/utilities/AppColorStyle.dart';
 import 'package:uninterested/utilities/app_back_button.dart';
+import 'package:uninterested/utilities/app_bar.dart';
 import 'package:uninterested/utilities/app_leading_app_bar.dart';
 import 'package:uninterested/utilities/app_text_fitted_elevated_button.dart';
 
@@ -11,12 +13,14 @@ class CommonContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColorPallet.white,
-        appBar: AppLeadingAppBar(
+        body:Column(children:[App_bar(
           leading: AppBackButton(),
-          title: "Cart",
-          background: AppColorPallet.white,
+          title: Text("Cart",style: AppTextStyle.sfpro(
+            fontSize: 24,
+            fontWeight: FontWeight.w500
+          ),),
         ),
-        body: CommonContainer2());
+        const CommonContainer2()]));
   }
 
   // Container buutoncontainer(String tittle) {
@@ -45,6 +49,7 @@ class CommonContainer2 extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
+            color: Colors.amber,
             padding: EdgeInsets.all(10),
             height: 120,
             width: double.infinity,

@@ -10,6 +10,7 @@ class AppTextFittedElevatedButton extends StatelessWidget {
   final TextStyle? textStyle;
   final double elevation;
   final bool expandAcrossWidth;
+  final OutlinedBorder? shape;
 
   const AppTextFittedElevatedButton({
     Key? key,
@@ -20,6 +21,7 @@ class AppTextFittedElevatedButton extends StatelessWidget {
     this.expandAcrossWidth = false,
     this.elevation = 0,
     this.textStyle,
+    this.shape,
   });
 
   @override
@@ -34,11 +36,7 @@ class AppTextFittedElevatedButton extends StatelessWidget {
           disabledForegroundColor: backgroundColor.withOpacity(0.38),
           disabledBackgroundColor: backgroundColor.withOpacity(0.12),
           elevation: elevation,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              17,
-            ),
-          ),
+          shape: shape,
           textStyle: textStyle ??
               AppTextStyle.sfpro(
                 color: AppColorPallet.white,

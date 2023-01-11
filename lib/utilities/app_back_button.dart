@@ -13,7 +13,7 @@ class AppBackButton extends StatelessWidget {
           AppLeadingIcons.back,
           color: AppColorPallet.black,
           height: 23,
-          width: 23,
+          width: 11.5,
         ),
         onTap: () => Navigator.pop(context),
       ),
