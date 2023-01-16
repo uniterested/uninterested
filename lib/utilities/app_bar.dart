@@ -32,25 +32,3 @@ import 'package:uninterested/utilities/AppColor.dart';
 
   }
 }
-
-
-//  return Scaffold(
-//       body: Container(
-//         height:  120,
-//         decoration: const BoxDecoration(
-//           borderRadius: BorderRadius.only(bottomRight: Radius.circular(27)),
-//        color: AppColorPallet.orange3 ),  
-        
-//         child:Row(children: [
-//         Padding(
-//           padding: const EdgeInsets.only(left: 18,top: 31),
-//           child: AppBackButton()
-//         ),
-//         Padding(
-//           padding: const EdgeInsets.only(left: 18.5,top:30 ),
-//           child: Text("Notification",style: 
-//           AppTextStyle.sfpro(fontSize: 24,fontWeight: FontWeight.w500),),
-//         )
-//         ]) ,
-//       ),
-//     );

@@ -56,4 +56,7 @@ class AppColorPallet {
 static const Color orange3=Color(0xFFFF8A65);
 static const Color grey_=Color(0xFFA5A5A5);
 static const Color listtilegrey=Color(0xFFD9D9D9);
+static const Color quantitygrey=Color(0xFFB6B6B6);
+static const Color lightNavy=Color(0xFF3A3957);
+static const Color textGrey=Color(0xFFA1A1A1);
 }

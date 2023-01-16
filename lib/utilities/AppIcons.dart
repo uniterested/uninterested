@@ -17,4 +17,10 @@ class AppLeadingIcons {
   static const String Payment = _iconPath + 'payment.svg';
   static const String about = _iconPath + 'about_us.svg';
   static const String log_out = _iconPath + 'log_out.svg';
+  static const String closeIcon= _iconPath+'closeIcon.svg';
+  static const String homeIcon= _iconPath+'homepng.png';
+  static const String cartIcon= _iconPath+'cartpng.png';
+  static const String userIcon= _iconPath+'userpng.png';
+  static const String heartIcon= _iconPath+'heart.png';
+  
 }

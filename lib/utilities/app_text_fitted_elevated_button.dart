@@ -47,16 +47,16 @@ class AppTextFittedElevatedButton extends StatelessWidget {
             color: backgroundColor,
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 15.0,
-            horizontal: 32.0,
-          ),
-          child: FittedBox(
-            child: child,
-          ),
+        child: FittedBox(
+          child: child,
         ),
       ),
     );
   }
 }
+
+// Padding(
+//           padding: const EdgeInsets.symmetric(
+//             vertical: 15.0,
+//             horizontal: 32.0,
+//           ),
