@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:uninterested/home/commonContainer.dart';
 import 'package:uninterested/home/dashboard.dart';
 import 'package:uninterested/home/myorders.dart';
@@ -23,14 +24,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         fontFamily: 'SFPro',
         // primarySwatch: Colors.blue,
       ),
-      home: const WishlistScrn(),
+      home: const CommonContainer(),
       
     );
   }

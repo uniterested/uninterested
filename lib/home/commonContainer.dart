@@ -7,6 +7,7 @@ import 'package:uninterested/utilities/app_back_button.dart';
 import 'package:uninterested/utilities/app_bar.dart';
 import 'package:uninterested/utilities/app_leading_app_bar.dart';
 import 'package:uninterested/utilities/app_text_fitted_elevated_button.dart';
+import 'package:uninterested/utilities/bottom_nav.dart';
 
 class CommonContainer extends StatefulWidget {
   const CommonContainer({Key? key}) : super(key: key);
@@ -18,19 +19,24 @@ class CommonContainer extends StatefulWidget {
 class _CommonContainerState extends State<CommonContainer> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: AppColorPallet.white,
-        body: Column(children: [
-          App_bar(
-            leading: AppBackButton(),
-            title: Text(
-              "Cart",
-              style:
-                  AppTextStyle.sfpro(fontSize: 24, fontWeight: FontWeight.w500),
-            ),
-          ),
-          const CommonContainer2()
-        ]));
+    return Stack(
+      children: [
+        Scaffold(
+            backgroundColor: AppColorPallet.white,
+            
+            body: Column(children: [
+              App_bar(
+                leading: AppBackButton(),
+                title: Text(
+                  "Cart",
+                  style:
+                      AppTextStyle.sfpro(fontSize: 24, fontWeight: FontWeight.w500),
+                ),
+              ),
+              const CommonContainer2()
+            ])),
+      const BottomNavigation()],
+    );
   }
 
   // Container buutoncontainer(String tittle) {
