@@ -42,7 +42,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
               currentIndex: currentindex,
               onTap: ((value) => setState(() {
                 currentindex=value;
-              
+                Get.to(screens[currentindex]);
               })),
                 
               selectedFontSize: 0,
