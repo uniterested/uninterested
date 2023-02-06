@@ -43,7 +43,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       children: [
                         Padding(
                           padding:
-                              const EdgeInsets.only(top: 10.0, left: 18, right: 14),
+                              const EdgeInsets.only(top: 10.0, left: 16, right: 16),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -85,7 +85,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                                         ),
                                       )),
                                   SizedBox(
-                                    width: 8,
+                                    width: 10,
                                   ),
                                   Container(
                                       height: 34,
@@ -103,198 +103,216 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding:
-                              const EdgeInsets.only(left: 18, top: 24),
-                          child: Text(
-                            'Hi, Muhammed !',
-                            style: AppTextStyle.sfpro(
-                                fontSize: 24, fontWeight: FontWeight.w600),
+                        Positioned(
+                          top: 80,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 19, top: 20),
+                            child: Text(
+                              'Hi, Muhammed !',
+                              style: AppTextStyle.sfpro(
+                                  fontSize: 32, fontWeight: FontWeight.w700),
+                            ),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
-                              left: 18.0, right: 14, top: 20, bottom: 30),
-                          child: Material(
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-                            elevation: 5,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: AppColorPallet.white.withOpacity(.6),
-                                  borderRadius: BorderRadius.circular(18)),
-                              height: 44,
-                              width: MediaQuery.of(context).size.width,
-                              child: TextField(
-                                decoration: InputDecoration(
-                                    enabled: false,
-                                    suffixIcon: Image.asset(AppLeadingIcons.Search),
-                                    labelText: 'Search in here',
-                                    labelStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
-                                    contentPadding:
-                                   EdgeInsets.symmetric(horizontal: 25)
-                                        ),
-                              ),
+                              left: 16.0, right: 16, top: 20, bottom: 10),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: AppColorPallet.white.withOpacity(.6),
+                                borderRadius: BorderRadius.circular(18)),
+                            height: 44,
+                            width: MediaQuery.of(context).size.width,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  enabled: false,
+                                  suffixIcon: Image.asset(AppLeadingIcons.Search),
+                                  labelText: 'Search in here',
+                                  labelStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
+                                  contentPadding:
+                                      EdgeInsets.symmetric(horizontal: 20)),
                             ),
                           ),
                         ),
-                        Column(children: [
-                          CarouselSlider.builder(
-                            itemCount: Stors1.length,
-                            itemBuilder: (context, index, realIndex) {
-                              return Padding(
-                                padding: const EdgeInsets.only(left: 20,right: 20,bottom: 2),
-                                child: Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(5),
-                                      child: Image.asset(
-                                        Stors1[index]["image"],
-                                        fit: BoxFit.fill,
-                                      ),
-                                    )),
-                              );
-                            },
-                            options: CarouselOptions(
-                              
-                                disableCenter: false,
-                                viewportFraction: 1,
-                                height: 127,
-                                autoPlay: true,
-                                autoPlayInterval: Duration(seconds: 5),
-                                aspectRatio: 16 / 9,
-                                enlargeCenterPage: true,
-                                onPageChanged: ((index, reason) {
-                                  setState(() {
-                                    activeindex = index;
-                                  });
-                                })),
-                          ),
-                          buildIndicator()
-                        ]),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 40),
-                          child: GridView.builder(
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            itemCount: Stors1.length,
-                            // ignore: prefer_const_constructors
-                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 31,
-                              mainAxisSpacing: 32,
-                            ),
-                            itemBuilder: (BuildContext context, int index) {
-                              return Center(
-                                child: AppCardContainer(
-                              child: Container(
-                                
-                                width: 182.9,
-                                height: 400,
-                                child: Stack(
-                                  alignment: Alignment.bottomCenter,
-                                  children: [
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 24.0),
+                          padding: const EdgeInsets.symmetric(),
+                          child: Column(children: [
+                            CarouselSlider.builder(
+                              itemCount: Stors1.length,
+                              itemBuilder: (context, index, realIndex) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(16),
+                                  child: Container(
+                                      width: MediaQuery.of(context).size.width,
                                       child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(17),
-                                        child: Container(
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          height: 400,
-                                          child: Image.asset(
-                                            Stors1[index]["image"],
-                                            fit: BoxFit.fill,
-                                          ),
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                              color: Colors.pink[100]),
+                                        borderRadius: BorderRadius.circular(5),
+                                        child: Image.asset(
+                                          Stors1[index]["image"],
+                                          fit: BoxFit.fill,
                                         ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      bottom: 0.0,
-                                      left: 0.0,
-                                      child: Container(
-                                        color: Colors.red,
-                                        child: CustomPaint(
-                                          painter: CustomContainerShapeBorder(
+                                      )),
+                                );
+                              },
+                              options: CarouselOptions(
+                                
+                                  disableCenter: false,
+                                  viewportFraction: 1,
+                                  height: 127,
+                                  autoPlay: true,
+                                  autoPlayInterval: Duration(seconds: 5),
+                                  aspectRatio: 16 / 9,
+                                  enlargeCenterPage: true,
+                                  onPageChanged: ((index, reason) {
+                                    setState(() {
+                                      activeindex = index;
+                                    });
+                                  })),
+                            ),
+                            buildIndicator()
+                          ]),
+                        ),
+                        GridView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: Stors1.length,
+                          // ignore: prefer_const_constructors
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 1,
+                            mainAxisSpacing: 10,
+                          ),
+                          itemBuilder: (BuildContext context, int index) {
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 14),
+                              child: Container(
+                                  child: Center(
+                                child: AppCardContainer(
+                                  child: Container(
+                                    width: 182.0,
+                                    height: 400,
+                                    child: Stack(
+                                      alignment: Alignment.bottomCenter,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(bottom: 24.0),
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(12),
+                                            child: Container(
+                                              width:
+                                                  MediaQuery.of(context).size.width,
+                                              height: 400,
+                                              child: Image.asset(
+                                                Stors1[index]["image"],
+                                                fit: BoxFit.fill,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(12.0),
+                                                  color: Colors.pink[100]),
+                                            ),
+                                          ),
+                                        ),
+                                        Positioned(
+                                          bottom: 0.0,
+                                          left: 0.0,
+                                          child: Container(
+                                            color: Colors.red,
+                                            child: CustomPaint(
+                                              painter: CustomContainerShapeBorder(
+                                                height: 70.0,
+                                                width: 182,
+                                                radius: 50.0,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Positioned(
+                                          top: 90,
+                                          right: 7,
+                                          child: CircleAvatar(
+                                            radius: 16,
+                                            backgroundColor: Colors.red,
+                                            child: Icon(
+                                              Icons.heart_broken_sharp,
+                                              size: 18,
+                                              color: AppColorPallet.white,
+                                            ),
+                                          ),
+                                        ),
+                                        Positioned(
+                                          bottom: 0,
+                                          child: Container(
                                             height: 70.0,
-                                            width: 182,
-                                            radius: 50.0,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      top: 90,
-                                      right: 7,
-                                      child: Image.asset(AppLeadingIcons.FavIcon)
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      child: Container(
-                                        height: 70.0,
-                                        width: 186.0,
-                                        child: Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 24.0, top: 17, right: 8),
-                                          child: Row(
-                                            children: [
-                                              Expanded(
-                                                child: Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      Stors1[index]['name'],
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      style: AppTextStyle.sfpro(
-                                                          fontSize: 14,
-                                                          fontWeight:
-                                                              FontWeight.w600),
-                                                    ),
-                                                    Row(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
+                                            width: 186.0,
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 24.0, top: 17, right: 8),
+                                              child: Row(
+                                                children: [
+                                                  Expanded(
+                                                    child: Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment.start,
                                                       children: [
                                                         Text(
-                                                          Stors1[index]['rs'],
-                                                          style: AppTextStyle
-                                                              .sfpro(
-                                                                  fontSize: 16,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w400),
+                                                          Stors1[index]['name'],
+                                                          overflow:
+                                                              TextOverflow.ellipsis,
+                                                          style: AppTextStyle.sfpro(
+                                                              fontSize: 14,
+                                                              fontWeight:
+                                                                  FontWeight.w600),
                                                         ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsets.only(
-                                                                  right:8,
-                                                                  bottom: 10),
-                                                          child: 
-                                                        Image.asset(AppLeadingIcons.addItem)
-                                                        )
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Text(
+                                                              Stors1[index]['rs'],
+                                                              style: AppTextStyle
+                                                                  .sfpro(
+                                                                      fontSize: 16,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w400),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsets.only(
+                                                                      right: 8,
+                                                                      bottom: 10),
+                                                              child: CircleAvatar(
+                                                                backgroundColor:
+                                                                    Colors.black,
+                                                                radius: 12,
+                                                                child: Icon(
+                                                                  Icons.add,
+                                                                  color:
+                                                                      Colors.white,
+                                                                  size: 14,
+                                                                ),
+                                                              ),
+                                                            )
+                                                          ],
+                                                        ),
                                                       ],
                                                     ),
-                                                  ],
-                                                ),
+                                                  ),
+                                                ],
                                               ),
-                                            ],
+                                            ),
                                           ),
                                         ),
-                                      ),
+                                      ],
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                                ),
-                              );
-                            },
-                          ),
+                              )),
+                            );
+                          },
                         )
                       ],
                     ),
@@ -310,7 +328,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
 
   buildIndicator() {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 26),
+      padding: const EdgeInsets.symmetric(vertical: 16),
       child: AnimatedSmoothIndicator(
         
         activeIndex: activeindex,

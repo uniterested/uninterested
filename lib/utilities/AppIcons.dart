@@ -22,5 +22,9 @@ class AppLeadingIcons {
   static const String cartIcon= _iconPath+'cartpng.png';
   static const String userIcon= _iconPath+'userpng.png';
   static const String heartIcon= _iconPath+'heart.png';
-  
+  static const String menuIcon=_iconPath+'menu2.svg';
+  static const String Notification=_iconPath+'notifypng.png';
+  static const String Search=_iconPath+'searchpng.png';
+  static const String FavIcon=_iconPath+'favpng.png';
+  static const String addItem=_iconPath+'addItempng.png';
 }

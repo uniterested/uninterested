@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:uninterested/home/commonContainer.dart';
+import 'package:uninterested/home/cart_screen.dart';
 import 'package:uninterested/home/dashboard.dart';
 import 'package:uninterested/home/myorders.dart';
 import 'package:uninterested/home/notification.dart';
+import 'package:uninterested/home/payment_screen.dart';
 import 'package:uninterested/home/product.dart';
 import 'package:uninterested/home/wishlist.dart';
 import 'package:uninterested/intro/main_page.dart';
@@ -25,14 +26,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         fontFamily: 'SFPro',
         // primarySwatch: Colors.blue,
       ),
-      home: const CommonContainer(),
+      home: const PaymentOptions(),
       
     );
   }

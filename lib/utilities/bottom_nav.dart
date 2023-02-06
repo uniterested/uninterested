@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:uninterested/home/commonContainer.dart';
+import 'package:uninterested/home/cart_screen.dart';
 import 'package:uninterested/home/dashboard.dart';
 import 'package:uninterested/home/myorders.dart';
 import 'package:uninterested/home/profile_screen.dart';
@@ -19,7 +19,7 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int currentindex=0;
+  int _selectedindex=0;
    List screens=[
     DashBoardScreen(),
     WishlistScrn(),
@@ -39,29 +39,29 @@ class _BottomNavigationState extends State<BottomNavigation> {
             child: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
               backgroundColor: AppColorPallet.navy,
-              currentIndex: currentindex,
+              currentIndex: _selectedindex,
               onTap: ((value) => setState(() {
-                currentindex=value;
-                Get.to(screens[currentindex]);
+                _selectedindex=value;
+                Navigator.of(context).push(
+                         MaterialPageRoute(builder: (context) => screens[_selectedindex]));
               })),
-                
+              selectedItemColor: AppColorPallet.grey,
+              unselectedItemColor:AppColorPallet.white,
               selectedFontSize: 0,
               unselectedFontSize: 0,
-              items: [
-                 BottomNavigationBarItem(icon:Image.asset(AppLeadingIcons.homeIcon,
-                   color: currentindex==0? Colors.grey:Colors.white
-                  ,),
+              items: const [
+                  BottomNavigationBarItem(icon:ImageIcon(AssetImage(AppLeadingIcons.homeIcon)),
               label: "",
               
               ),
-               BottomNavigationBarItem(icon:Image.asset(AppLeadingIcons.heartIcon,
-               color: currentindex==1? Colors.grey:Colors.white),
+               BottomNavigationBarItem(icon:ImageIcon(AssetImage(AppLeadingIcons.heartIcon),
+               ),
               label: ""),
-                BottomNavigationBarItem(icon: Image.asset(AppLeadingIcons.cartIcon,
-                color: currentindex==2? Colors.grey:Colors.white),
+                BottomNavigationBarItem(icon: ImageIcon(AssetImage(AppLeadingIcons.cartIcon),
+            ),
                label: ""),
-                 BottomNavigationBarItem(icon: Image.asset(AppLeadingIcons.userIcon,
-                 color: currentindex==3? Colors.grey:Colors.white),
+                 BottomNavigationBarItem(icon: ImageIcon(AssetImage(AppLeadingIcons.userIcon),
+              ),
                label: "")
             ],
         

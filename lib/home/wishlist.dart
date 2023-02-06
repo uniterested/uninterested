@@ -6,33 +6,48 @@ import 'package:uninterested/utilities/AppIcons.dart';
 import 'package:uninterested/utilities/app_back_button.dart';
 import 'package:uninterested/utilities/app_bar.dart';
 import 'package:uninterested/utilities/app_text_fitted_elevated_button.dart';
+import 'package:uninterested/utilities/bottom_nav.dart';
 
-class WishlistScrn extends StatelessWidget {
+
+
+class WishlistScrn extends StatefulWidget {
   const WishlistScrn({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: AppColorPallet.white,
-        body: Column(children: [
-          App_bar(
-            leading: AppBackButton(),
-            title: Text(
-              "Wishlist",
-              style:
-                  AppTextStyle.sfpro(fontSize: 24, fontWeight: FontWeight.w500),
-            ),
-          ),
-          const CommonContainer2()
-        ]));
-  }
-
-  
+  State<WishlistScrn> createState() => _WishlistScrnState();
 }
 
-class CommonContainer2 extends StatelessWidget {
+class _WishlistScrnState extends State<WishlistScrn> {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Scaffold(
+            backgroundColor: AppColorPallet.white,
+            body: Column(children: [
+              App_bar(
+                leading: AppBackButton(),
+                title: Text(
+                  "Wishlist",
+                  style:
+                      AppTextStyle.sfpro(fontSize: 24, fontWeight: FontWeight.w500),
+                ),
+              ),
+              const CommonContainer2()
+            ])),
+      BottomNavigation()],
+    );
+  }
+}
+
+class CommonContainer2 extends StatefulWidget {
   const CommonContainer2({Key? key}) : super(key: key);
 
+  @override
+  State<CommonContainer2> createState() => _CommonContainer2State();
+}
+
+class _CommonContainer2State extends State<CommonContainer2> {
   @override
   Widget build(BuildContext context) {
     return Expanded(

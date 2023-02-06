@@ -59,4 +59,7 @@ static const Color listtilegrey=Color(0xFFD9D9D9);
 static const Color quantitygrey=Color(0xFFB6B6B6);
 static const Color lightNavy=Color(0xFF3A3957);
 static const Color textGrey=Color(0xFFA1A1A1);
+static const Color bgblue=Color(0xFFCFDEFA);
+static const Color gray=Color(0xFFBEBCBC);
+
 }

@@ -5,9 +5,14 @@ import 'package:uninterested/utilities/app_back_button.dart';
 import 'package:uninterested/utilities/app_bar.dart';
 
 
-class MyOrders extends StatelessWidget {
+class MyOrders extends StatefulWidget {
   const MyOrders({Key? key}) : super(key: key);
 
+  @override
+  State<MyOrders> createState() => _MyOrdersState();
+}
+
+class _MyOrdersState extends State<MyOrders> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +31,14 @@ class MyOrders extends StatelessWidget {
   }
 }
 
-class CommonContainer2 extends StatelessWidget {
+class CommonContainer2 extends StatefulWidget {
   const CommonContainer2({Key? key}) : super(key: key);
 
+  @override
+  State<CommonContainer2> createState() => _CommonContainer2State();
+}
+
+class _CommonContainer2State extends State<CommonContainer2> {
   @override
   Widget build(BuildContext context) {
     return  Expanded(
