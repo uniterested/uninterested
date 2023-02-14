@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:uninterested/utilities/AppColor.dart';
 import 'package:uninterested/utilities/AppColorStyle.dart';
 import 'package:uninterested/utilities/AppIcons.dart';
@@ -172,9 +173,9 @@ class _LogInScreenState extends State<LogInScreen> {
             
                    expandAcrossWidth: true,
                   onPressed: () {
-                    
+                    Get.toNamed('/OTPscreen');
                   },
-                  child: Text("Sent OTP",),
+                  child: Text("Send OTP",),
                 ),
               ),
             ),

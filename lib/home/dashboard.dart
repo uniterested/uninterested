@@ -9,14 +9,14 @@ import 'package:uninterested/utilities/AppIcons.dart';
 import 'package:uninterested/utilities/appcardcontainer.dart';
 import 'package:uninterested/utilities/bottom_nav.dart';
 
-class DashBoardScreen extends StatefulWidget {
-  const DashBoardScreen({super.key});
+class DashBoardScrn extends StatefulWidget {
+  const DashBoardScrn({super.key});
 
   @override
-  State<DashBoardScreen> createState() => _DashBoardScreenState();
+  State<DashBoardScrn> createState() => _DashBoardScrnState();
 }
 
-class _DashBoardScreenState extends State<DashBoardScreen> {
+class _DashBoardScrnState extends State<DashBoardScrn> {
   Color colorOne = Colors.red;
   Color colorTwo = Colors.red;
   Color colorThree = Colors.black45;

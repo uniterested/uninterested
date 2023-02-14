@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:uninterested/intro/slider_page.dart';
 import 'package:uninterested/utilities/AppColor.dart';
 import 'package:uninterested/utilities/AppColorStyle.dart';
@@ -135,6 +136,7 @@ class _LandingState extends State<Landing> {
                                           setState(() {
                                             _currentPage += 1;
                                           });
+                                          Get.toNamed('/LogInScreen');
                                           // Navigator.push(
                                           //   context,
                                           //   MaterialPageRoute(
@@ -155,12 +157,9 @@ class _LandingState extends State<Landing> {
                                         child: SvgPicture.asset(
                                           "assets/next.svg"
                                         ),
-                                        // Icon(
-                                        //   Icons.navigate_next,
-                                        //   size: 50,
-                                        //   color: Colors.black,
-                                        // ),
+                                        
                                         onTap: () {
+                                          Get.toNamed('/LogInScreen');
                                           // Navigator.push(
                                           //   context,
                                           //   MaterialPageRoute(

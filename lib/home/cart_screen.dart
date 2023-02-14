@@ -9,14 +9,14 @@ import 'package:uninterested/utilities/app_leading_app_bar.dart';
 import 'package:uninterested/utilities/app_text_fitted_elevated_button.dart';
 import 'package:uninterested/utilities/bottom_nav.dart';
 
-class CommonContainer extends StatefulWidget {
-  const CommonContainer({Key? key}) : super(key: key);
+class CartScreen extends StatefulWidget {
+  const CartScreen({Key? key}) : super(key: key);
 
   @override
-  State<CommonContainer> createState() => _CommonContainerState();
+  State<CartScreen> createState() => _CartScreenState();
 }
 
-class _CommonContainerState extends State<CommonContainer> {
+class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return Stack(
