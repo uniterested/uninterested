@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:uninterested/home/cart_screen.dart';
-import 'package:uninterested/home/dashboard2.dart';
+import 'package:uninterested/home/dashboardScreen.dart';
 import 'package:uninterested/home/myorders.dart';
 import 'package:uninterested/home/profile_screen.dart';
 import 'package:uninterested/home/wishlist.dart';
@@ -22,7 +22,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int _selectedindex=0;
    List screens=[
     DashBoardScreen(),
-    WishlistScrn(),
+    WishlistScreen(),
     CartScreen(),
     ProfileScreen()
   ];

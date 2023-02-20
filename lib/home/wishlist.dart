@@ -10,14 +10,14 @@ import 'package:uninterested/utilities/bottom_nav.dart';
 
 
 
-class WishlistScrn extends StatefulWidget {
-  const WishlistScrn({Key? key}) : super(key: key);
+class WishlistScreen extends StatefulWidget {
+  const WishlistScreen({Key? key}) : super(key: key);
 
   @override
-  State<WishlistScrn> createState() => _WishlistScrnState();
+  State<WishlistScreen> createState() => _WishlistScreenState();
 }
 
-class _WishlistScrnState extends State<WishlistScrn> {
+class _WishlistScreenState extends State<WishlistScreen> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -106,7 +106,7 @@ class _CommonContainer2State extends State<CommonContainer2> {
                               const SizedBox(height: 8,),
                               Text(
                                 "will be delivered by Tuesday",
-                                overflow: TextOverflow.ellipsis,
+
                                 maxLines: 2,
                                 style: AppTextStyle.sfpro(
                                     fontSize: 14,

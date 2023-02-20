@@ -4,8 +4,6 @@ import 'package:uninterested/utilities/AppColor.dart';
 import 'package:uninterested/utilities/AppColorStyle.dart';
 
 
-// import 'package:zopnote_consumer/utilities/color_pallete.dart';
-// import 'package:zopnote_consumer/utilities/text_style.dart';
 
 class SliderPage extends StatelessWidget {
   final String title;
@@ -61,7 +59,7 @@ class SliderPage extends StatelessWidget {
           ),
           
           SizedBox(
-            height: 60,
+            height: 34,
           ),
         ],
       ),

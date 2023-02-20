@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:uninterested/home/cart_screen.dart';
-import 'package:uninterested/home/dashboard2.dart';
+import 'package:uninterested/home/dashboardScreen.dart';
 import 'package:uninterested/home/myorders.dart';
 import 'package:uninterested/home/notification.dart';
 import 'package:uninterested/home/payment_screen.dart';
@@ -51,12 +51,12 @@ class MyApp extends StatelessWidget {
           page: () => DashBoardScreen(),
         ),
         GetPage(
-          name: '/ProductScreen',
-          page: () => Productscrn(),
+          name: '/ProductDetailsScreen',
+          page: () => ProductDetailsScreen(),
         ),
         GetPage(
           name: '/WishListScreen',
-          page: () => WishlistScrn(),
+          page: () => WishlistScreen(),
         ),
         GetPage(
           name: '/CartScreen',
@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: '/NotificationScreen',
-          page: () => NotificationScrn(),
+          page: () => NotificationScreen(),
         ),
       ],
     );

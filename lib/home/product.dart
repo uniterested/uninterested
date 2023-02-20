@@ -7,14 +7,14 @@ import 'package:uninterested/utilities/AppColorStyle.dart';
 import 'package:uninterested/utilities/AppIcons.dart';
 import '../utilities/button.dart';
 
-class Productscrn extends StatefulWidget {
-  const Productscrn({Key? key}) : super(key: key);
+class ProductDetailsScreen extends StatefulWidget {
+  const ProductDetailsScreen({Key? key}) : super(key: key);
 
   @override
-  State<Productscrn> createState() => _ProductscrnState();
+  State<ProductDetailsScreen> createState() => _ProductDetailsScreenState();
 }
 
-class _ProductscrnState extends State<Productscrn> {
+class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   var activeindex = 0;
   List image = ["assets/macrome.jpg", "assets/1.jpg", "assets/macrome.jpg"];
   final controller = CarouselController();

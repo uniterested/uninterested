@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:uninterested/home/stor.dart';
 import 'package:uninterested/utilities/AppColor.dart';
 import 'package:uninterested/utilities/AppColorStyle.dart';
 import 'package:uninterested/utilities/AppIcons.dart';
@@ -26,6 +25,36 @@ class _DashBoardScrnState extends State<DashBoardScrn> {
   );
   int currentindex = 0;
   int activeindex = 0;
+  List Stors1 = [
+  {
+    "image": "assets/1.jpg",
+    "name": "Fresh Curd",
+    "rs": "\$30.00",
+    "rate": "5.3"
+  },
+  {
+    "image": "assets/2.jpg",
+    "name": "Fresh Yourt",
+    "rs": "\$25.00",
+    "rate": "4.1"
+  },
+  {"image": "assets/3.jpg", "name": "Paneer", "rs": "\$73.00", "rate": "7.6"},
+  {
+    "image": "assets/4.jpg",
+    "name": "Thumps Up Soft Drinks",
+    "rs": "\$36.00",
+    "rate": "5.9"
+  },
+  {
+    "image": "assets/5.jpg",
+    "name": "Fresh Milk",
+    "rs": "\$55.00",
+    "rate": "8.1"
+  },
+];
+
+
+
   @override
   Widget build(BuildContext context) {
     return Stack(

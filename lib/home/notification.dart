@@ -5,15 +5,15 @@ import 'package:uninterested/utilities/AppColorStyle.dart';
 import 'package:uninterested/utilities/app_back_button.dart';
 import 'package:uninterested/utilities/app_bar.dart';
 
-class NotificationScrn extends StatefulWidget {
+class NotificationScreen extends StatefulWidget {
 
-   const NotificationScrn({super.key});
+   const NotificationScreen({super.key});
 
   @override
-  State<NotificationScrn> createState() => _NotificationScrnState();
+  State<NotificationScreen> createState() => _NotificationScreenState();
 }
 
-class _NotificationScrnState extends State<NotificationScrn> {
+class _NotificationScreenState extends State<NotificationScreen> {
   int selectedIndex=0;
   List data=[{
     "title":"Your order has been Recived",

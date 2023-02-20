@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:uninterested/utilities/AppColor.dart';
 import 'package:uninterested/utilities/AppColorStyle.dart';
 import 'package:uninterested/utilities/app_back_button.dart';
@@ -58,7 +59,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           height: 46,
                           width: 200,
 
-                          // width: MediaQuery.of(context).size.width * 4 / 5,
+                          
                           child: Center(
                             child: TextField(
                               // controller: _otpController,
@@ -166,7 +167,9 @@ class _OtpScreenState extends State<OtpScreen> {
                   height: 48,
                   child: AppTextFittedElevatedButton(
                     elevation: 3,
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed('/DashboardScreen');
+                    },
                     child: Text(
                       "Verify",
                       style: AppTextStyle.sfpro(
