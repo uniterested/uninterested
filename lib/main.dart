@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'SFPro',
       ),
-      //  home:  Landing(),
+      home: ProductDetailsScreen(),
       initialRoute: '/InitialLoadingScreen',
       getPages: [
         GetPage(

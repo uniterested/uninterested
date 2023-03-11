@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:uninterested/home/dashboardScreen.dart';
 import 'package:uninterested/intro/slider_page.dart';
 import 'package:uninterested/utilities/AppColor.dart';
 import 'package:uninterested/utilities/AppColorStyle.dart';
@@ -67,11 +68,12 @@ class _LandingState extends State<Landing> {
                       (_currentPage != (_pages.length - 1))
                           ? InkWell(
                               onTap: () {
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //       builder: (context) => const LogInScreen()),
-                                // );
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const DashBoardScreen()),
+                                );
                               },
                               child: Text(
                                 'Skip',
@@ -89,7 +91,8 @@ class _LandingState extends State<Landing> {
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 100.0,right: 11,left: 11),
+                    padding: const EdgeInsets.only(
+                        bottom: 100.0, right: 11, left: 11),
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [

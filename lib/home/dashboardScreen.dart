@@ -179,6 +179,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                                 return Padding(
                                   padding: const EdgeInsets.all(16),
                                   child: Container(
+                                      height: 300,
                                       width: MediaQuery.of(context).size.width,
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(5),

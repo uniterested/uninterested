@@ -8,6 +8,7 @@ import 'package:uninterested/utilities/AppIcons.dart';
 import '../utilities/button.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
+  static const String route = '-/product-deatail-screen';
   const ProductDetailsScreen({Key? key}) : super(key: key);
 
   @override
