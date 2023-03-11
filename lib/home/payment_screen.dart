@@ -95,7 +95,7 @@ class OptionContainer extends StatelessWidget {
           child: Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left:14,right: 16 ),
+                padding: const EdgeInsets.only(left: 14, right: 16),
                 child: Container(
                   height: 25,
                   width: 25,

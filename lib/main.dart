@@ -29,9 +29,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         fontFamily: 'SFPro',
-        // primarySwatch: Colors.blue,
       ),
-      // home: const PaymentOptions(),
+      //  home:  Landing(),
       initialRoute: '/InitialLoadingScreen',
       getPages: [
         GetPage(

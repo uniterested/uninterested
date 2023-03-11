@@ -3,14 +3,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:uninterested/utilities/AppColor.dart';
 import 'package:uninterested/utilities/AppColorStyle.dart';
 
-
-
 class SliderPage extends StatelessWidget {
   final String title;
   final String description;
   final String image;
 
-  SliderPage({required this.title,required this.description, required this.image});
+  SliderPage(
+      {required this.title, required this.description, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +19,9 @@ class SliderPage extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: Column(
-        
         children: <Widget>[
-        
           Padding(
-            padding: const EdgeInsets.only(left: 80,right:80,top: 119),
+            padding: const EdgeInsets.only(left: 80, right: 80, top: 119),
             child: Text(
               title,
               style: AppTextStyle.sfpro(
@@ -35,9 +32,8 @@ class SliderPage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          
-           Padding(
-            padding: const EdgeInsets.only(left: 80,right: 80,top: 13),
+          Padding(
+            padding: const EdgeInsets.only(left: 80, right: 80, top: 13),
             child: Text(
               description,
               style: AppTextStyle.sfpro(
@@ -51,16 +47,12 @@ class SliderPage extends StatelessWidget {
           SizedBox(
             height: 48,
           ),
-         
           SvgPicture.asset(
             image,
             width: 386,
             height: 386,
           ),
-          
-          SizedBox(
-            height: 34,
-          ),
+         
         ],
       ),
     );

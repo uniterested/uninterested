@@ -36,7 +36,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppLeadingAppBar(
         background: AppColorPallet.pink,
         title: "Profile",
-      
         leading: AppBackButton(),
       ),
       body: Stack(
@@ -92,8 +91,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               controller: _emailIdController,
                               title: "Email id",
                               hintText: "Enter Email Id",
-                              validator: MultiValidator(
-                              [EmailValidator(errorText: 'Enter valid email')]),
+                              validator: MultiValidator([
+                                EmailValidator(errorText: 'Enter valid email')
+                              ]),
                             ),
 
                             CommonTextFormField(
@@ -105,7 +105,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 LengthRangeValidator(
                                     min: 10,
                                     max: 13,
-                                    errorText: "Please enter valid phone number"),
+                                    errorText:
+                                        "Please enter valid phone number"),
                                 RequiredValidator(
                                     errorText: "Please enter mobile name"),
                               ]),
@@ -124,7 +125,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 FilteringTextInputFormatter.digitsOnly,
                               ],
                             ),
-                            
 
                             //dropdownbusiness category
 
@@ -187,18 +187,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 25),
-                    child: Align(alignment: Alignment.topCenter,
+                    child: Align(
+                      alignment: Alignment.topCenter,
                       child: picture == null
                           ? Container(
-                            decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            boxShadow: [BoxShadow(blurRadius: 15, color: Colors.black12,spreadRadius: 3)],
-                            ),
-                            child: CircleAvatar(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                      blurRadius: 15,
+                                      color: Colors.black12,
+                                      spreadRadius: 3)
+                                ],
+                              ),
+                              child: CircleAvatar(
                                 radius: 75,
                                 child: Icon(Icons.person),
                               ),
-                          )
+                            )
                           : CircleAvatar(
                               radius: 75,
                               backgroundImage: FileImage(
@@ -209,67 +215,67 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 228.0, top: 130),
-                  //   child: 
-                  //   CircleAvatar(
-                  //     radius: 19,
-                  //  backgroundColor: AppColorPallet.zop_green_natural_light,
-                      child: IconButton(
-                        onPressed: () {
-                          showAdaptiveActionSheet(
-                            context: context,
-                            title: Text(
-                              'Select Profile Picture',
-                              style: AppTextStyle.sfpro(
-                                color: AppColorPallet.zop_green,
-                              ),
+                    //   child:
+                    //   CircleAvatar(
+                    //     radius: 19,
+                    //  backgroundColor: AppColorPallet.zop_green_natural_light,
+                    child: IconButton(
+                      onPressed: () {
+                        showAdaptiveActionSheet(
+                          context: context,
+                          title: Text(
+                            'Select Profile Picture',
+                            style: AppTextStyle.sfpro(
+                              color: AppColorPallet.zop_green,
                             ),
-                            androidBorderRadius: 30,
-                            actions: <BottomSheetAction>[
-                              BottomSheetAction(
-                                  leading: Icon(
-                                    Icons.camera,
-                                    // color: AppColorPallet.zop_green,
-                                  ),
-                                  title: Text(
-                                    'From Camera',
-                                    // style: AppTextStyle.latoMedium(
-                                    //   fontSize: 18,
-                                    //   color: AppColorPallet.zop_Sleepy_Dark,
-                                    // ),
-                                  ),
-                                  onPressed: (context) {
-                                    _pickImage();
-                                    Navigator.of(context).pop();
-                                  }),
-                              BottomSheetAction(
-                                  leading: Icon(
-                                    Icons.image,
-                                    color: AppColorPallet.black,
-                                  ),
-                                  title: Text(
-                                    'Upload from Gallery',
-                                    // style: AppTextStyle.latoMedium(
-                                    //   fontSize: 18,
-                                    //   color: AppColorPallet.zop_Sleepy_Dark,
-                                    // ),
-                                  ),
-                                  onPressed: (context) {
-                                    _pickImageGallery();
-                                    Navigator.of(context).pop();
-                                  }),
-                            ],
-                            cancelAction: CancelAction(
+                          ),
+                          androidBorderRadius: 30,
+                          actions: <BottomSheetAction>[
+                            BottomSheetAction(
+                                leading: Icon(
+                                  Icons.camera,
+                                  // color: AppColorPallet.zop_green,
+                                ),
                                 title: Text(
-                              'Done',
-                              style: AppTextStyle.sfpro(
-                                  // color: Colors.accents,
-                                  ),
-                            )),
-                          );
-                        },
-                        // icon: Icon(Icons.edit),
-                         icon: SvgPicture.asset(
-                           AppLeadingIcons.edit,
+                                  'From Camera',
+                                  // style: AppTextStyle.latoMedium(
+                                  //   fontSize: 18,
+                                  //   color: AppColorPallet.zop_Sleepy_Dark,
+                                  // ),
+                                ),
+                                onPressed: (context) {
+                                  _pickImage();
+                                  Navigator.of(context).pop();
+                                }),
+                            BottomSheetAction(
+                                leading: Icon(
+                                  Icons.image,
+                                  color: AppColorPallet.black,
+                                ),
+                                title: Text(
+                                  'Upload from Gallery',
+                                  // style: AppTextStyle.latoMedium(
+                                  //   fontSize: 18,
+                                  //   color: AppColorPallet.zop_Sleepy_Dark,
+                                  // ),
+                                ),
+                                onPressed: (context) {
+                                  _pickImageGallery();
+                                  Navigator.of(context).pop();
+                                }),
+                          ],
+                          cancelAction: CancelAction(
+                              title: Text(
+                            'Done',
+                            style: AppTextStyle.sfpro(
+                                // color: Colors.accents,
+                                ),
+                          )),
+                        );
+                      },
+                      // icon: Icon(Icons.edit),
+                      icon: SvgPicture.asset(
+                        AppLeadingIcons.edit,
                         // ),
                       ),
                     ),
@@ -282,8 +288,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.only(bottom: 24.0),
             child: Align(
               alignment: Alignment.bottomCenter,
-              child: SizedBox(width: 178,
-              height: 48,
+              child: SizedBox(
+                width: 178,
+                height: 48,
                 child: AppTextFittedElevatedButton(
                     onPressed: () {}, child: Text('Next')),
               ),

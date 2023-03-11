@@ -23,19 +23,19 @@ class _CartScreenState extends State<CartScreen> {
       children: [
         Scaffold(
             backgroundColor: AppColorPallet.white,
-            
             body: Column(children: [
               App_bar(
                 leading: AppBackButton(),
                 title: Text(
                   "Cart",
-                  style:
-                      AppTextStyle.sfpro(fontSize: 24, fontWeight: FontWeight.w500),
+                  style: AppTextStyle.sfpro(
+                      fontSize: 24, fontWeight: FontWeight.w500),
                 ),
               ),
               const CommonContainer2()
             ])),
-      const BottomNavigation()],
+        const BottomNavigation()
+      ],
     );
   }
 
@@ -74,11 +74,11 @@ class _CommonContainer2State extends State<CommonContainer2> {
       child: ListView.builder(
         padding: EdgeInsets.only(top: 8),
         itemCount: 10,
-        itemBuilder: (context, index) => 
-            Padding(
-          padding: const EdgeInsets.only(left: 8, right:8,bottom: 8),
+        itemBuilder: (context, index) => Padding(
+          padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
           child: Card(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(17)),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(17)),
             elevation: 5,
             child: Stack(
               children: [
@@ -102,7 +102,6 @@ class _CommonContainer2State extends State<CommonContainer2> {
                             height: 86,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(17),
-                              
                             ),
                             child: Image.asset("assets/cartimage.png",
                                 fit: BoxFit.cover),
@@ -110,10 +109,9 @@ class _CommonContainer2State extends State<CommonContainer2> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
-                            left: 11,bottom: 32,top: 16
-                          ),
-                          child: Container(width: 220,
-                          
+                              left: 11, bottom: 32, top: 16),
+                          child: Container(
+                            width: 220,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -124,7 +122,9 @@ class _CommonContainer2State extends State<CommonContainer2> {
                                       fontSize: 24,
                                       fontWeight: FontWeight.w500),
                                 ),
-                                SizedBox(height: 10,),
+                                SizedBox(
+                                  height: 10,
+                                ),
                                 Text(
                                   "will be delivered by Tuesday",
                                   overflow: TextOverflow.ellipsis,
@@ -134,7 +134,6 @@ class _CommonContainer2State extends State<CommonContainer2> {
                                       fontWeight: FontWeight.w400),
                                 )
                               ],
-                            
                             ),
                           ),
                         ),
@@ -142,7 +141,8 @@ class _CommonContainer2State extends State<CommonContainer2> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 24),
-                      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SizedBox(
                             width: 230,
@@ -155,7 +155,7 @@ class _CommonContainer2State extends State<CommonContainer2> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(right:8.0),
+                            padding: const EdgeInsets.only(right: 8.0),
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
@@ -179,9 +179,8 @@ class _CommonContainer2State extends State<CommonContainer2> {
                                       child: Text(
                                         '$_n',
                                         style: AppTextStyle.sfpro(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w400
-                                        ),
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w400),
                                         textAlign: TextAlign.center,
                                       )),
                                   GestureDetector(
@@ -202,8 +201,8 @@ class _CommonContainer2State extends State<CommonContainer2> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 23, vertical: 16),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 23, vertical: 16),
                       child: SizedBox(
                         height: 46,
                         child: AppTextFittedElevatedButton(
@@ -227,7 +226,7 @@ class _CommonContainer2State extends State<CommonContainer2> {
             ),
           ),
         ),
-     ),
+      ),
     );
   }
 }

@@ -26,34 +26,32 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   int currentindex = 0;
   int activeindex = 0;
   List Stors1 = [
-  {
-    "image": "assets/1.jpg",
-    "name": "Fresh Curd",
-    "rs": "\$30.00",
-    "rate": "5.3"
-  },
-  {
-    "image": "assets/2.jpg",
-    "name": "Fresh Yourt",
-    "rs": "\$25.00",
-    "rate": "4.1"
-  },
-  {"image": "assets/3.jpg", "name": "Paneer", "rs": "\$73.00", "rate": "7.6"},
-  {
-    "image": "assets/4.jpg",
-    "name": "Thumps Up Soft Drinks",
-    "rs": "\$36.00",
-    "rate": "5.9"
-  },
-  {
-    "image": "assets/5.jpg",
-    "name": "Fresh Milk",
-    "rs": "\$55.00",
-    "rate": "8.1"
-  },
-];
-
-
+    {
+      "image": "assets/1.jpg",
+      "name": "Fresh Curd",
+      "rs": "\$30.00",
+      "rate": "5.3"
+    },
+    {
+      "image": "assets/2.jpg",
+      "name": "Fresh Yourt",
+      "rs": "\$25.00",
+      "rate": "4.1"
+    },
+    {"image": "assets/3.jpg", "name": "Paneer", "rs": "\$73.00", "rate": "7.6"},
+    {
+      "image": "assets/4.jpg",
+      "name": "Thumps Up Soft Drinks",
+      "rs": "\$36.00",
+      "rate": "5.9"
+    },
+    {
+      "image": "assets/5.jpg",
+      "name": "Fresh Milk",
+      "rs": "\$55.00",
+      "rate": "8.1"
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -68,11 +66,12 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               child: Column(children: [
                 Stack(
                   children: [
-                    Column(crossAxisAlignment: CrossAxisAlignment.start,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding:
-                              const EdgeInsets.only(top: 10.0, left: 16, right: 16),
+                          padding: const EdgeInsets.only(
+                              top: 10.0, left: 16, right: 16),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -82,13 +81,14 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                                     height: 34,
                                     width: 34,
                                     decoration: BoxDecoration(
-                                        color: AppColorPallet.white.withOpacity(.4),
-                                        borderRadius: BorderRadius.circular(10)),
+                                        color: AppColorPallet.white
+                                            .withOpacity(.4),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
                                     child: Padding(
                                       padding: const EdgeInsets.all(9.0),
                                       child: SvgPicture.asset(
                                         AppLeadingIcons.menuIcon,
-                                        
                                       ),
                                     ),
                                   ),
@@ -103,7 +103,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                                       height: 34,
                                       width: 34,
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                           color: Colors.cyanAccent),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(10),
@@ -120,10 +121,13 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                                       height: 34,
                                       width: 34,
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
-                                          color: AppColorPallet.white.withOpacity(.4)),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: AppColorPallet.white
+                                              .withOpacity(.4)),
                                       child: IconButton(
-                                        icon: Image.asset(AppLeadingIcons.Notification),
+                                        icon: Image.asset(
+                                            AppLeadingIcons.Notification),
                                         // iconSize: 26,
                                         onPressed: () {},
                                       ))
@@ -135,8 +139,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                         Positioned(
                           top: 80,
                           child: Padding(
-                            padding:
-                                const EdgeInsets.only(left: 19, top: 20),
+                            padding: const EdgeInsets.only(left: 19, top: 20),
                             child: Text(
                               'Hi, Muhammed !',
                               style: AppTextStyle.sfpro(
@@ -156,9 +159,12 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                             child: TextField(
                               decoration: InputDecoration(
                                   enabled: false,
-                                  suffixIcon: Image.asset(AppLeadingIcons.Search),
+                                  suffixIcon:
+                                      Image.asset(AppLeadingIcons.Search),
                                   labelText: 'Search in here',
-                                  labelStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
+                                  labelStyle: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400),
                                   contentPadding:
                                       EdgeInsets.symmetric(horizontal: 20)),
                             ),
@@ -184,7 +190,6 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                                 );
                               },
                               options: CarouselOptions(
-                                
                                   disableCenter: false,
                                   viewportFraction: 1,
                                   height: 127,
@@ -206,14 +211,16 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                           physics: NeverScrollableScrollPhysics(),
                           itemCount: Stors1.length,
                           // ignore: prefer_const_constructors
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             crossAxisSpacing: 1,
                             mainAxisSpacing: 10,
                           ),
                           itemBuilder: (BuildContext context, int index) {
                             return Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 14),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 14),
                               child: Container(
                                   child: Center(
                                 child: AppCardContainer(
@@ -224,13 +231,15 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                                       alignment: Alignment.bottomCenter,
                                       children: [
                                         Padding(
-                                          padding:
-                                              const EdgeInsets.only(bottom: 24.0),
+                                          padding: const EdgeInsets.only(
+                                              bottom: 24.0),
                                           child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(12),
+                                            borderRadius:
+                                                BorderRadius.circular(12),
                                             child: Container(
-                                              width:
-                                                  MediaQuery.of(context).size.width,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
                                               height: 400,
                                               child: Image.asset(
                                                 Stors1[index]["image"],
@@ -238,7 +247,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                                               ),
                                               decoration: BoxDecoration(
                                                   borderRadius:
-                                                      BorderRadius.circular(12.0),
+                                                      BorderRadius.circular(
+                                                          12.0),
                                                   color: Colors.pink[100]),
                                             ),
                                           ),
@@ -249,7 +259,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                                           child: Container(
                                             color: Colors.red,
                                             child: CustomPaint(
-                                              painter: CustomContainerShapeBorder(
+                                              painter:
+                                                  CustomContainerShapeBorder(
                                                 height: 70.0,
                                                 width: 182,
                                                 radius: 50.0,
@@ -277,22 +288,27 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                                             width: 186.0,
                                             child: Padding(
                                               padding: const EdgeInsets.only(
-                                                  left: 24.0, top: 17, right: 8),
+                                                  left: 24.0,
+                                                  top: 17,
+                                                  right: 8),
                                               child: Row(
                                                 children: [
                                                   Expanded(
                                                     child: Column(
                                                       crossAxisAlignment:
-                                                          CrossAxisAlignment.start,
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Text(
                                                           Stors1[index]['name'],
-                                                          overflow:
-                                                              TextOverflow.ellipsis,
-                                                          style: AppTextStyle.sfpro(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight.w600),
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
+                                                          style: AppTextStyle
+                                                              .sfpro(
+                                                                  fontSize: 14,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600),
                                                         ),
                                                         Row(
                                                           mainAxisAlignment:
@@ -300,27 +316,30 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                                                                   .spaceBetween,
                                                           children: [
                                                             Text(
-                                                              Stors1[index]['rs'],
-                                                              style: AppTextStyle
-                                                                  .sfpro(
-                                                                      fontSize: 16,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400),
+                                                              Stors1[index]
+                                                                  ['rs'],
+                                                              style: AppTextStyle.sfpro(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w400),
                                                             ),
                                                             Padding(
-                                                              padding:
-                                                                  EdgeInsets.only(
+                                                              padding: EdgeInsets
+                                                                  .only(
                                                                       right: 8,
-                                                                      bottom: 10),
-                                                              child: CircleAvatar(
+                                                                      bottom:
+                                                                          10),
+                                                              child:
+                                                                  CircleAvatar(
                                                                 backgroundColor:
-                                                                    Colors.black,
+                                                                    Colors
+                                                                        .black,
                                                                 radius: 12,
                                                                 child: Icon(
                                                                   Icons.add,
-                                                                  color:
-                                                                      Colors.white,
+                                                                  color: Colors
+                                                                      .white,
                                                                   size: 14,
                                                                 ),
                                                               ),
@@ -351,7 +370,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             ),
           ),
         ),
-      BottomNavigation()],
+        BottomNavigation()
+      ],
     );
   }
 
@@ -359,14 +379,13 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: AnimatedSmoothIndicator(
-        
         activeIndex: activeindex,
         count: Stors1.length,
         effect: const SlideEffect(
           spacing: 3,
           dotHeight: 7,
           dotWidth: 7,
-          activeDotColor:AppColorPallet.orange3,
+          activeDotColor: AppColorPallet.orange3,
           dotColor: AppColorPallet.white,
         ),
       ),
@@ -484,17 +503,16 @@ class Ldrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SizedBox(width: 327,
+        SizedBox(
+          width: 327,
           height: 846,
           child: Drawer(
-            
-            backgroundColor:AppColorPallet.orange3,
+            backgroundColor: AppColorPallet.orange3,
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 60, right: 297),
-                  child: SvgPicture.asset(AppLeadingIcons.back)
-                ),
+                    padding: const EdgeInsets.only(top: 60, right: 297),
+                    child: SvgPicture.asset(AppLeadingIcons.back)),
                 SizedBox(
                   height: 40,
                 ),
@@ -505,11 +523,10 @@ class Ldrawer extends StatelessWidget {
                         height: 50,
                         child: ListTile(
                           leading: SvgPicture.asset(AppLeadingIcons.plan),
-                          
                           title: Text(
                             "Your Orders",
-                            style: AppTextStyle.sfpro(fontSize: 14,
-                            fontWeight: FontWeight.w400),
+                            style: AppTextStyle.sfpro(
+                                fontSize: 14, fontWeight: FontWeight.w400),
                           ),
                           onTap: () {},
                           minLeadingWidth: 1,
@@ -518,12 +535,12 @@ class Ldrawer extends StatelessWidget {
                       SizedBox(
                         height: 50,
                         child: ListTile(
-                          leading: SvgPicture.asset(AppLeadingIcons.profile_icon),
-                         
+                          leading:
+                              SvgPicture.asset(AppLeadingIcons.profile_icon),
                           title: Text(
                             "My Profile",
-                            style: AppTextStyle.sfpro(fontSize: 14,
-                            fontWeight: FontWeight.w400),
+                            style: AppTextStyle.sfpro(
+                                fontSize: 14, fontWeight: FontWeight.w400),
                           ),
                           minLeadingWidth: 1,
                         ),
@@ -532,22 +549,20 @@ class Ldrawer extends StatelessWidget {
                         height: 50,
                         child: ListTile(
                           leading: SvgPicture.asset(AppLeadingIcons.Payment),
-                         
                           title: Text(
                             "Payment History",
-                            style: AppTextStyle.sfpro(fontSize: 14,
-                            fontWeight: FontWeight.w400),
+                            style: AppTextStyle.sfpro(
+                                fontSize: 14, fontWeight: FontWeight.w400),
                           ),
                           minLeadingWidth: 1,
                         ),
                       ),
                       ListTile(
                         leading: SvgPicture.asset(AppLeadingIcons.about),
-                        
                         title: Text(
                           "About Us",
-                          style: AppTextStyle.sfpro(fontSize: 14,
-                            fontWeight: FontWeight.w400),
+                          style: AppTextStyle.sfpro(
+                              fontSize: 14, fontWeight: FontWeight.w400),
                         ),
                         minLeadingWidth: 1,
                       )
@@ -571,14 +586,16 @@ class Ldrawer extends StatelessWidget {
                 ),
                 Text(
                   "Log Out",
-                  style: TextStyle(color: AppColorPallet.white,
-                   fontSize: 20,
-                   fontWeight: FontWeight.w400, shadows: [
-                    Shadow(
-                        color: Colors.black26,
-                        offset: Offset(-1, 3),
-                        blurRadius: 5),
-                  ]),
+                  style: TextStyle(
+                      color: AppColorPallet.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      shadows: [
+                        Shadow(
+                            color: Colors.black26,
+                            offset: Offset(-1, 3),
+                            blurRadius: 5),
+                      ]),
                 ),
                 SizedBox(
                   height: 85,

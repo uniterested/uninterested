@@ -55,11 +55,8 @@ class _OtpScreenState extends State<OtpScreen> {
                                   color: AppColorPallet.txt_fld_border),
                               borderRadius: BorderRadius.circular(7),
                               color: AppColorPallet.white),
-
                           height: 46,
                           width: 200,
-
-                          
                           child: Center(
                             child: TextField(
                               // controller: _otpController,

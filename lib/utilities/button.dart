@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uninterested/utilities/AppColor.dart';
-// import 'package:zopnote_consumer/utilities/text_style.dart';
 
 import 'AppColorStyle.dart';
-//  import 'color_pallete.dart';
 
 class AppTextFittedElevatedButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -44,10 +42,9 @@ class AppTextFittedElevatedButton extends StatelessWidget {
           ),
           textStyle: textStyle ??
               AppTextStyle.sfpro(
-                color: AppColorPallet.white,
-                fontWeight: FontWeight.w700,
-                fontSize: 15
-              ),
+                  color: AppColorPallet.white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 15),
           side: BorderSide(
             color: backgroundColor,
           ),

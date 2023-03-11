@@ -9,18 +9,16 @@ import 'package:uninterested/home/wishlist.dart';
 import 'package:uninterested/utilities/AppColor.dart';
 import 'package:uninterested/utilities/AppIcons.dart';
 
-
 class BottomNavigation extends StatefulWidget {
-  
-   const BottomNavigation({super.key});
-   
+  const BottomNavigation({super.key});
+
   @override
   State<BottomNavigation> createState() => _BottomNavigationState();
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int _selectedindex=0;
-   List screens=[
+  int _selectedindex = 0;
+  List screens = [
     DashBoardScreen(),
     WishlistScreen(),
     CartScreen(),
@@ -29,7 +27,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16,right: 16,bottom: 7),
+      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 7),
       child: Align(
         alignment: Alignment.bottomCenter,
         child: ClipRRect(
@@ -41,35 +39,39 @@ class _BottomNavigationState extends State<BottomNavigation> {
               backgroundColor: AppColorPallet.navy,
               currentIndex: _selectedindex,
               onTap: ((value) => setState(() {
-                _selectedindex=value;
-                Navigator.of(context).push(
-                         MaterialPageRoute(builder: (context) => screens[_selectedindex]));
-              })),
+                    _selectedindex = value;
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => screens[_selectedindex]));
+                  })),
               selectedItemColor: AppColorPallet.grey,
-              unselectedItemColor:AppColorPallet.white,
+              unselectedItemColor: AppColorPallet.white,
               selectedFontSize: 0,
               unselectedFontSize: 0,
               items: const [
-                  BottomNavigationBarItem(icon:ImageIcon(AssetImage(AppLeadingIcons.homeIcon)),
-              label: "",
-              
-              ),
-               BottomNavigationBarItem(icon:ImageIcon(AssetImage(AppLeadingIcons.heartIcon),
-               ),
-              label: ""),
-                BottomNavigationBarItem(icon: ImageIcon(AssetImage(AppLeadingIcons.cartIcon),
-            ),
-               label: ""),
-                 BottomNavigationBarItem(icon: ImageIcon(AssetImage(AppLeadingIcons.userIcon),
-              ),
-               label: "")
-            ],
-        
+                BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage(AppLeadingIcons.homeIcon)),
+                  label: "",
+                ),
+                BottomNavigationBarItem(
+                    icon: ImageIcon(
+                      AssetImage(AppLeadingIcons.heartIcon),
+                    ),
+                    label: ""),
+                BottomNavigationBarItem(
+                    icon: ImageIcon(
+                      AssetImage(AppLeadingIcons.cartIcon),
+                    ),
+                    label: ""),
+                BottomNavigationBarItem(
+                    icon: ImageIcon(
+                      AssetImage(AppLeadingIcons.userIcon),
+                    ),
+                    label: "")
+              ],
             ),
           ),
         ),
       ),
-    ) ;
+    );
   }
 }
-

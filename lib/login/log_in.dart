@@ -8,7 +8,6 @@ import 'package:uninterested/utilities/AppIcons.dart';
 import 'package:uninterested/utilities/app_text_fitted_elevated_button.dart';
 import 'package:uninterested/utilities/formatter/phonenumber.dart';
 
-
 class LogInScreen extends StatefulWidget {
   static String route = '/login';
   const LogInScreen({Key? key}) : super(key: key);
@@ -23,182 +22,171 @@ class _LogInScreenState extends State<LogInScreen> {
   String? contactError;
   @override
   Widget build(BuildContext context) {
-    return 
-       Scaffold(
-        backgroundColor: AppColorPallet.white,
-        body: Column(
+    return Scaffold(
+      backgroundColor: AppColorPallet.white,
+      body: SingleChildScrollView(
+        child: Column(
           children: [
-            Flexible(
-              child: SizedBox(
-                height: 124,
-              ),
-            ),
+            //  Flexible(
+              //  child: 
+             SizedBox(
+                 height: 124,
+               ),
+            //  ),
             Center(
-              child: Text("Log in",style: AppTextStyle.sfpro(
-                fontSize: 24,
-                fontWeight: FontWeight.w600
-              ),)           
-            ),
+                child: Text(
+              "Log in",
+              style:
+                  AppTextStyle.sfpro(fontSize: 24, fontWeight: FontWeight.w600),
+            )),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 46,
-              vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
               child: Container(
                   alignment: Alignment.center,
-                              
                   child: SvgPicture.asset(
                     "assets/login.svg",
-                  )
-                ),
+                  )),
             ),
-
-            
             Center(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    
-                    Padding(
-                      padding: const EdgeInsets.only(left: 28),
-                      child: Text("Phone Number *",style: AppTextStyle.sfpro(
-                        fontSize: 14,fontWeight: FontWeight.w500,
-                        color: AppColorPallet.grey
-                      ),),
-                    ),
-
-                    
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8,left: 25,right: 25),
-                      child: Material(
-                        elevation: 1,
-                        shadowColor: AppColorPallet.txt_fld_border,
-                        borderRadius: BorderRadius.circular(7),
-                        child: Container(
-                        
-                          decoration: BoxDecoration(
-                         color: AppColorPallet.white,
-                            borderRadius: BorderRadius.circular(7),
-                             border: Border.all(
-                              color: AppColorPallet.txt_fld_border
-                             )
-                          ),
-                          height: 46,
-                          // width: 350,
-                          // width: MediaQuery.of(context).size.width * 4 / 5,
-                          child: Center(
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal:8.0),
-                                  child: SvgPicture.asset(AppLeadingIcons.flag),
-                                ),
-                                Text(
-                                  "+91",
-                                  style: AppTextStyle.sfpro(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    left: 8.0,
-                                    right: 12.0,
-                                  ),
-                                  child:SvgPicture.asset(AppLeadingIcons.arrow_down),
+              child:
+                  Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 28),
+                  child: Text(
+                    "Phone Number *",
+                    style: AppTextStyle.sfpro(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: AppColorPallet.grey),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8, left: 25, right: 25),
+                  child: Material(
+                    elevation: 1,
+                    shadowColor: AppColorPallet.txt_fld_border,
+                    borderRadius: BorderRadius.circular(7),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: AppColorPallet.white,
+                          borderRadius: BorderRadius.circular(7),
+                          border:
+                              Border.all(color: AppColorPallet.txt_fld_border)),
+                      height: 46,
+                      
+                      child: Center(
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: SvgPicture.asset(AppLeadingIcons.flag),
+                            ),
+                            Text(
+                              "+91",
+                              style: AppTextStyle.sfpro(
+                                  fontSize: 16, fontWeight: FontWeight.w400),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 8.0,
+                                right: 12.0,
+                              ),
+                              child: SvgPicture.asset(AppLeadingIcons.arrow_down),
+                            ),
+                            SizedBox(
+                              height: 100,
+                              width: 200,
+                              child: TextField(
+                                controller: _contactNumberController,
+                                autofocus: true,
+                                inputFormatters: [
+                                  LengthLimitingTextInputFormatter(12),
+                                  FilteringTextInputFormatter.digitsOnly,
+                                  PhoneNumberFormatter()
+                                ],
+                                style: AppTextStyle.sfpro(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
                                   
                                 ),
-                                SizedBox(
-                                  height: 100,
-                                  width: 200,
-                                  child: TextField(
-                                    
-                                    controller: _contactNumberController,
-                                    autofocus: true,
-                                    inputFormatters: [
-                                      LengthLimitingTextInputFormatter(12),
-                                      FilteringTextInputFormatter.digitsOnly,
-                                      PhoneNumberFormatter()
-                                    ],
-                                    style:  AppTextStyle.sfpro(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      // height: 1.5, //Add this
-                                    ),
-                                    keyboardType: TextInputType.number,
-                                    decoration: const InputDecoration(
-
-                                      contentPadding: EdgeInsets.only(left: 2,top: 2,bottom: 2),
-                                      
-                                      hintText: "Enter Phone Number",
-                                      border: InputBorder.none,
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide.none,
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide.none,
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide.none,
-                                      ),
-                                      hintStyle: TextStyle(
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.w500,
-                                        color: AppColorPallet.hintgrey,
-                                        
-                                      ),
-                                    ),
+                                keyboardType: TextInputType.number,
+                                decoration: const InputDecoration(
+                                  contentPadding:
+                                      EdgeInsets.only(left: 2, top: 2, bottom: 2),
+                                  hintText: "Enter Phone Number",
+                                  border: InputBorder.none,
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                  ),
+                                  hintStyle: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColorPallet.hintgrey,
                                   ),
                                 ),
-                              ],
+                              ),
                             ),
-                          ),
+                          ],
                         ),
                       ),
                     ),
-                    if (contactError != null)
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          contactError.toString(),
-                          style: AppTextStyle.sfpro(
-                            color: AppColorPallet.zop_Red,
-                          ),
-                        ),
+                  ),
+                ),
+                if (contactError != null)
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      contactError.toString(),
+                      style: AppTextStyle.sfpro(
+                        color: AppColorPallet.zop_Red,
                       ),
-                  ]),
+                    ),
+                  ),
+              ]),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 16,left: 16,right: 16),
-              child: SizedBox(height: 48,
-              
+              padding: EdgeInsets.only(top: 16, left: 16, right: 16),
+              child: SizedBox(
+                height: 48,
                 child: AppTextFittedElevatedButton(
-            
-                   expandAcrossWidth: true,
+                  expandAcrossWidth: true,
                   onPressed: () {
                     Get.toNamed('/OTPscreen');
                   },
-                  child: Text("Send OTP",),
+                  child: Text(
+                    "Send OTP",
+                  ),
                 ),
               ),
             ),
-           
-         Padding(
-           padding: const EdgeInsets.only(top: 32),
-           child: RichText(text: TextSpan(text: "Are you a New user ?",
-           style: AppTextStyle.sfpro(
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
-            color: AppColorPallet.grey2
-           ),
-           children: [
-            TextSpan(text: " Sign Up",style: AppTextStyle.sfpro(
-              fontSize: 16,fontWeight: FontWeight.w600,
-
-            ))
-           ])),
-         )
-
+            Padding(
+              padding: const EdgeInsets.only(top: 32),
+              child: RichText(
+                  text: TextSpan(
+                      text: "Are you a New user ?",
+                      style: AppTextStyle.sfpro(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: AppColorPallet.grey2),
+                      children: [
+                    TextSpan(
+                        text: " Sign Up",
+                        style: AppTextStyle.sfpro(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ))
+                  ])),
+            )
           ],
         ),
-      
+      ),
     );
   }
 }

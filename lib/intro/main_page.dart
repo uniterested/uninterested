@@ -59,53 +59,54 @@ class _LandingState extends State<Landing> {
           SafeArea(
             child: Stack(
               children: [
-                
                 Padding(
                   padding: const EdgeInsets.only(top: 30.0, right: 11),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: [(_currentPage != (_pages.length - 1))?
-                      InkWell(
-                        onTap: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       builder: (context) => const LogInScreen()),
-                          // );
-                        },
-                        child: Text(
-                          'Skip',
-                          style: AppTextStyle.sfpro(
-                            fontSize: 16,
-                            color: AppColorPallet.zop_map_text,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      )
-                      :Text("")
+                    children: [
+                      (_currentPage != (_pages.length - 1))
+                          ? InkWell(
+                              onTap: () {
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //       builder: (context) => const LogInScreen()),
+                                // );
+                              },
+                              child: Text(
+                                'Skip',
+                                style: AppTextStyle.sfpro(
+                                  fontSize: 16,
+                                  color: AppColorPallet.zop_map_text,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            )
+                          : Text("")
                     ],
                   ),
                 ),
-                Padding(
-                    padding: const EdgeInsets.only(bottom: 100.0,right: 11 ,left: 11),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 100.0,right: 11,left: 11),
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(bottom: 40),
                             child: AnimatedSmoothIndicator(
-                             activeIndex: _currentPage,
-                             count: _pages.length,
-                             effect: SlideEffect(
-                              radius: 3,
-                               spacing: 0,
-                               dotHeight: 4.94,
-                               dotWidth: 84,
-                               activeDotColor:
-                                   AppColorPallet.pink,
-                               dotColor: AppColorPallet.listtilegrey,
-                             ),
-                                ),
+                              activeIndex: _currentPage,
+                              count: _pages.length,
+                              effect: SlideEffect(
+                                radius: 3,
+                                spacing: 0,
+                                dotHeight: 4.94,
+                                dotWidth: 84,
+                                activeDotColor: AppColorPallet.pink,
+                                dotColor: AppColorPallet.listtilegrey,
+                              ),
+                            ),
                           ),
                           Align(
                             alignment: Alignment.bottomRight,
@@ -116,18 +117,16 @@ class _LandingState extends State<Landing> {
                                     curve: Curves.easeInOutQuint);
                               },
                               child: AnimatedContainer(
-                                
                                 alignment: Alignment.center,
                                 duration: Duration(milliseconds: 300),
                                 height: 32,
                                 width: (_currentPage == (_pages.length - 1))
                                     ? 150
                                     : 32,
-                                    // color: Colors.amber,
-                                
                                 child: (_currentPage == (_pages.length - 1))
                                     ? Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
                                         children: [
                                           InkWell(
                                             onTap: () {
@@ -139,16 +138,17 @@ class _LandingState extends State<Landing> {
                                                 _currentPage += 1;
                                               });
                                               Get.toNamed('/LogInScreen');
-                                              
                                             },
                                             child: Padding(
-                                              padding: const EdgeInsets.only(right: 8),
+                                              padding: const EdgeInsets.only(
+                                                  right: 8),
                                               child: Text(
                                                 "Get Started",
                                                 style: TextStyle(
                                                     color: Colors.black,
                                                     fontSize: 20,
-                                                    fontWeight: FontWeight.w500),
+                                                    fontWeight:
+                                                        FontWeight.w500),
                                               ),
                                             ),
                                           ),
@@ -157,17 +157,17 @@ class _LandingState extends State<Landing> {
                                                 "assets/next.svg"),
                                             onTap: () {
                                               Get.toNamed('/LogInScreen');
-                                             
                                             },
                                           ),
                                         ],
                                       )
                                     : SvgPicture.asset("assets/next.svg"),
-                               
                               ),
                             ),
                           ),
-                        ])),
+                        ]),
+                  ),
+                ),
               ],
             ),
           ),

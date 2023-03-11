@@ -82,14 +82,15 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   height: 370,
                   child: Column(
                     children: [
-                       Padding(
+                      Padding(
                         padding: EdgeInsets.only(
                             top: 26, left: 18, right: 10, bottom: 15),
                         child: SizedBox(
                           width: 328,
                           child: Text(
                             "LETHER HAND MAID POASAS AJJGGKGG BFDKDFHDFNFND",
-                            style: AppTextStyle.sfpro(fontSize: 17,fontWeight: FontWeight.w400),
+                            style: AppTextStyle.sfpro(
+                                fontSize: 17, fontWeight: FontWeight.w400),
                           ),
                         ),
                       ),
@@ -104,8 +105,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               height: 17,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
-                                  color: AppColorPallet.orange2.withOpacity(.45)
-                                  ),
+                                  color:
+                                      AppColorPallet.orange2.withOpacity(.45)),
                               child: Align(
                                   alignment: Alignment.center,
                                   child: Text(
@@ -121,9 +122,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                   child: Text(
                                     "506 Review",
                                     style: AppTextStyle.sfpro(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w400
-                                    ),
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w400),
                                   ),
                                 ),
                                 Icon(
@@ -159,9 +159,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                     width: 72,
                                     child: Text("Scanted",
                                         style: AppTextStyle.sfpro(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.w400
-                                        )),
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400)),
                                   )
                                 ],
                               ),
@@ -184,9 +183,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                     child: Text(
                                       "vitamin b5, hyaluronic acid, peptides,",
                                       style: AppTextStyle.sfpro(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w400
-                                      ),
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w400),
                                     ),
                                   ),
                                 ],
@@ -209,7 +207,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                     width: 72,
                                     child: Text(
                                       "Cream",
-                                      style: AppTextStyle.sfpro(fontSize: 13,fontWeight: FontWeight.w400),
+                                      style: AppTextStyle.sfpro(
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w400),
                                     ),
                                   ),
                                 ],
@@ -233,7 +233,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                         onPressed: () {},
                                         child: Text(
                                           "ADD TO CART",
-                                          
                                         )),
                                   ),
                                 ),
@@ -286,10 +285,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
       child: Align(
         alignment: Alignment.center,
         child: AnimatedSmoothIndicator(
-        
           activeIndex: activeindex,
           count: image.length,
-          effect:SlideEffect(
+          effect: SlideEffect(
             spacing: 0,
             dotHeight: 4,
             dotWidth: 84,
